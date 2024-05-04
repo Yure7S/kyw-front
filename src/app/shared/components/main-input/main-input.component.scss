@@ -1,0 +1,72 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    top: 12px;
+    left: 15px;
+    padding: 0px 5px;
+    position: absolute;
+    color: $color-base-500;
+    font-size: $text-base;
+    background-color: #fafafa;
+    font-family: $font-family-secondary;
+    transition: $animate-duration $animate-keyframe;
+
+    &:hover {
+      cursor: text;
+    }
+  }
+
+  input {
+    padding: 11px 17px;
+    background-color: #fafafa;
+    border-radius: 7px;
+    border: 2px solid #e0e0e0;
+    font-size: calc($text-base + 1px);
+    font-family: $font-family-tertiary;
+    line-height: 1.4;
+    word-spacing: 3px;
+    transition: 0.3s;
+    color: $color-base-600;
+
+    &.invalid {
+      border-color: rgb(230, 0, 20);
+    }
+
+    &:focus,
+    &:valid {
+      border: 2px solid $color-base-300;
+    }
+
+    &:focus~label,
+    &:valid~label,
+    &:disabled~label {
+      color: $color-primary;
+      transform: translateY(0%);
+      background: linear-gradient(to bottom, transparent 50%, #fafafa 0%);
+      font-size: $text-sm;
+      top: -11px;
+    }
+  }
+
+  .error-span-component {
+    margin-top: 18px;
+    margin-bottom: -5px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 560px) {
+  .box-input input {
+    padding: 12px 17px;
+  }
+}
