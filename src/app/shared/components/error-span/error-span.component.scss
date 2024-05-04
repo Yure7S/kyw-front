@@ -1,0 +1,14 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+span {
+  color: $color-warn;
+  font-size: clamp(15px, 0.5rem + 0.9vw, calc($text-base - 1px));
+  display: block;
+  text-align: left;
+  padding-bottom: 5px;
+  margin: -12px 0px;
+}
