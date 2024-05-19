@@ -1,0 +1,11 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+p {
+  color: $color-secondary-400;
+  font-family: $font-family-tertiary;
+  font-size: $text-base;
+}
