@@ -6,12 +6,12 @@ import { ErrorSpanComponent } from '../../shared/components/error-span/error-spa
 import { IdValuePipe } from '../../shared/pipes/id-value.pipe';
 import { ValidationErrorPipe } from '../../shared/pipes/validation-error.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CardContainerComponent } from '../../shared/compontents/card-container/card-container.component';
-import { SeparatorRowComponent } from '../../shared/compontents/separator-row/separator-row.component';
-import { Title1Component } from '../../shared/compontents/title-1/title-1.component';
-import { ParagraphComponent } from '../../shared/compontents/paragraph/paragraph.component';
-import { ButtonMainActionComponent } from '../../shared/compontents/buttons/button-main-action/button-main-action.component';
-import { ArrowRedirectComponent } from '../../shared/compontents/arrow-redirect/arrow-redirect.component';
+import { CardContainerComponent } from '../../shared/components/card-container/card-container.component';
+import { SeparatorRowComponent } from '../../shared/components/separator-row/separator-row.component';
+import { Title1Component } from '../../shared/components/title-1/title-1.component';
+import { ParagraphComponent } from '../../shared/components/paragraph/paragraph.component';
+import { ButtonMainActionComponent } from '../../shared/components/buttons/button-main-action/button-main-action.component';
+import { ArrowRedirectComponent } from '../../shared/components/arrow-redirect/arrow-redirect.component';
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
 import { HighlightLinkComponent } from '../../shared/components/highlight-link/highlight-link.component';
