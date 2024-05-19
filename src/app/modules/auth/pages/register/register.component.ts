@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,5 +7,12 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  tempControl = new FormControl()
+
+  formBuilder = inject(FormBuilder)
+
+  registerType: FormControl = new FormControl(true)
+
+  form = this.formBuilder.group({
+    tempControl: [''],
+  })
 }
