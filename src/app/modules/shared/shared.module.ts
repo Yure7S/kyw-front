@@ -14,6 +14,7 @@ import { ButtonMainActionComponent } from '../../shared/compontents/buttons/butt
 import { ArrowRedirectComponent } from '../../shared/compontents/arrow-redirect/arrow-redirect.component';
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
+import { HighlightLinkComponent } from '../../shared/components/highlight-link/highlight-link.component';
 
 
 
@@ -29,6 +30,7 @@ import { RouterModule } from '@angular/router';
     ParagraphComponent,
     ButtonMainActionComponent,
     ArrowRedirectComponent,
+    HighlightLinkComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { RouterModule } from '@angular/router';
     ParagraphComponent,
     ButtonMainActionComponent,
     ArrowRedirectComponent,
+    HighlightLinkComponent,
   ],
   providers: [
     provideNgxMask(),

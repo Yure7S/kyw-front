@@ -1,21 +1,22 @@
 <app-auth-template>
     <ng-container title>
-        <app-title-1>Entre com a sua conta</app-title-1>
+        <app-title-1>Crie sua conta</app-title-1>
     </ng-container>
     <ng-container description>
-        <app-paragraph>Insira o e-mail e a senha que você definiu ao criar a sua conta. Não tem conta? <app-highlight-link routerLinkValue="../cadastro">Clique aqui</app-highlight-link> para
-            criar uma.</app-paragraph>
+        <app-paragraph>Preencha os dados e clique em cadastrar. Já tem conta? <app-highlight-link routerLinkValue="../login">Clique aqui</app-highlight-link> para entrar.</app-paragraph>
     </ng-container>
     <ng-container form>
         <form class="flex-column">
+            <app-main-input placeholder="Nome" [control]="tempControl"></app-main-input>
             <app-main-input placeholder="Email ou telefone" [control]="tempControl"></app-main-input>
             <app-main-input type="password" placeholder="Senha" [control]="tempControl"></app-main-input>
+            <app-main-input type="password" placeholder="Confirmar Senha" [control]="tempControl"></app-main-input>
         </form>
     </ng-container>
     <ng-container response>
 
     </ng-container>
     <ng-container buttons>
-        <app-button-main-action [fullWidth]="true">LOGIN</app-button-main-action>
+        <app-button-main-action [fullWidth]="true">CADASTRAR</app-button-main-action>
     </ng-container>
 </app-auth-template>
