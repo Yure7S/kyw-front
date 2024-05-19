@@ -6,13 +6,15 @@ import { AuthTemplateComponent } from './components/templates/auth-template/auth
 import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { RegisterComponent } from './pages/register/register.component';
+import { RegisterTypeSwitchComponent } from './components/register-type-switch/register-type-switch.component';
 
 
 @NgModule({
   declarations: [
     AuthTemplateComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterTypeSwitchComponent
   ],
   imports: [
     CommonModule,

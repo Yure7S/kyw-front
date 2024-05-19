@@ -42,6 +42,7 @@ import { HighlightLinkComponent } from '../../shared/components/highlight-link/h
   ],
   exports: [
     FormsModule,
+    IdValuePipe,
     MainInputComponent,
     ReactiveFormsModule,
     CardContainerComponent,
