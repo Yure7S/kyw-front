@@ -1,0 +1,16 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+a {
+  color: $color-secondary-500;
+  font-size: 20px;
+  transition: 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-primary-900;
+  }
+}

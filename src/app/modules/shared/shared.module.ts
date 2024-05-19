@@ -11,6 +11,9 @@ import { SeparatorRowComponent } from '../../shared/compontents/separator-row/se
 import { Title1Component } from '../../shared/compontents/title-1/title-1.component';
 import { ParagraphComponent } from '../../shared/compontents/paragraph/paragraph.component';
 import { ButtonMainActionComponent } from '../../shared/compontents/buttons/button-main-action/button-main-action.component';
+import { ArrowRedirectComponent } from '../../shared/compontents/arrow-redirect/arrow-redirect.component';
+import { IconsModule } from '../icons/icons.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -25,12 +28,15 @@ import { ButtonMainActionComponent } from '../../shared/compontents/buttons/butt
     Title1Component,
     ParagraphComponent,
     ButtonMainActionComponent,
+    ArrowRedirectComponent,
   ],
   imports: [
     CommonModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    FormsModule
+    FormsModule,
+    IconsModule,
+    RouterModule
   ],
   exports: [
     FormsModule,
@@ -40,6 +46,8 @@ import { ButtonMainActionComponent } from '../../shared/compontents/buttons/butt
     SeparatorRowComponent,
     Title1Component,
     ParagraphComponent,
+    ButtonMainActionComponent,
+    ArrowRedirectComponent,
   ],
   providers: [
     provideNgxMask(),
