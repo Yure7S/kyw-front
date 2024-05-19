@@ -1,0 +1,22 @@
+<app-login-template>
+    <ng-container title>
+        <app-title-1>Crie sua conta</app-title-1>
+    </ng-container>
+    <ng-container description>
+        <app-paragraph>Preencha os dados e clique em cadastrar. Já tem conta? Clique aqui para entrar.</app-paragraph>
+    </ng-container>
+    <ng-container form>
+        <form class="flex-column">
+            <app-main-input placeholder="Nome" [control]="tempControl"></app-main-input>
+            <app-main-input placeholder="Email ou telefone" [control]="tempControl"></app-main-input>
+            <app-main-input type="password" placeholder="Senha" [control]="tempControl"></app-main-input>
+            <app-main-input type="password" placeholder="Confirmar Senha" [control]="tempControl"></app-main-input>
+        </form>
+    </ng-container>
+    <ng-container response>
+
+    </ng-container>
+    <ng-container buttons>
+        <app-button-main-action [fullWidth]="true">CADASTRAR</app-button-main-action>
+    </ng-container>
+</app-login-template>
