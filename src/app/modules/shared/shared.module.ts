@@ -5,6 +5,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { ErrorSpanComponent } from '../../shared/components/error-span/error-span.component';
 import { IdValuePipe } from '../../shared/pipes/id-value.pipe';
 import { ValidationErrorPipe } from '../../shared/pipes/validation-error.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,10 +19,13 @@ import { ValidationErrorPipe } from '../../shared/pipes/validation-error.pipe';
   imports: [
     CommonModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    FormsModule
   ],
   exports: [
-    MainInputComponent
+    MainInputComponent,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     provideNgxMask(),

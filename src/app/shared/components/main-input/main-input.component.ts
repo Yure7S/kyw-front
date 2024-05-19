@@ -14,14 +14,13 @@ import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class MainInputComponent {
   @Output() onBlur: EventEmitter<any> = new EventEmitter()
   @Input({ required: true }) placeholder!: string
-  @Input() control!: FormControl
+  @Input({ required: true }) control!: FormControl
   @Input() errorMessages!: object
   @Input() isRequired: boolean = true
   @Input() isDisabled: boolean = false
   @Input() maskValue?: string
   @Input() formSubmitted: boolean = false
   @Input() type?: string
-  @Input() id?: string
   @Input() value?: string
 
   private onChanged = (value: string) => { }

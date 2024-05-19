@@ -1,24 +1,22 @@
-<ng-container *ngIf="id ?? placeholder | idValue as idValue">
-  <div class="box-input">
-    <input
-      #element
-      [value]="value"
-      (input)="writeValue(element.value)"
-      (blur)="onTouched(element); handleBlur()"
-      [type]="type"
-      [mask]="maskValue"
-      [id]="idValue"
-      [required]="isRequired"
-      [disabled]="isDisabled"
-      [class.invalid]="control.errors && (control.touched || formSubmitted)"
-    />
-
-    <label [for]="idValue">{{ placeholder }}</label>
-    <app-error-span
-      *ngIf="control.errors && (control.touched || formSubmitted)"
-      class="error-span-component"
-    >
-      {{ errorMessages! | validationError : control.errors! }}
-    </app-error-span>
-  </div>
-</ng-container>
+<div class="box-input">
+  <input
+  #element
+  [value]="value"
+  (input)="writeValue(element.value)"
+  (blur)="onTouched(element); handleBlur()"
+  [type]="type"
+  [mask]="maskValue"
+  [id]="placeholder | idValue"
+  [required]="isRequired"
+  [disabled]="isDisabled"
+  [class.invalid]="control.errors && (control.touched || formSubmitted)"
+  />
+  
+  <label [for]="placeholder | idValue">{{ placeholder }}</label>
+  <app-error-span
+    *ngIf="control.errors && (control.touched || formSubmitted)"
+    class="error-span-component"
+  >
+    {{ errorMessages! | validationError : control.errors! }}
+  </app-error-span>
+</div>
