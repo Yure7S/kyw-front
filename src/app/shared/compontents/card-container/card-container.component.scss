@@ -1,0 +1,12 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+div {
+  background-color: $color-base-100;
+  box-shadow: $main-card-shadow;
+  border-radius: 10px;
+  border: 1px solid $color-secondary-100;
+}
