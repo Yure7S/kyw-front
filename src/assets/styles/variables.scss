@@ -18,8 +18,8 @@ $color-secondary-700: #242A30;
 $color-secondary-900: #191F25;
 
 $color-base-100: white;
-$color-base-200: #ededed;
-$color-base-300: #b8b8b8;
+$color-base-200: #fffefc;
+$color-base-300: #d9d5cc;
 $color-base-400: #6e6e6e;
 $color-base-500: #5f5f5f;
 $color-base-600: #4d4d4d;
@@ -48,3 +48,6 @@ $text-3xl: 4.06rem;
 $font-family-primary: 'Roboto', sans-serif;
 $font-family-secondary: 'Poppins', sans-serif;
 $font-family-tertiary: "Nunito Sans", sans-serif;
+
+// Box shadow
+$main-card-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);

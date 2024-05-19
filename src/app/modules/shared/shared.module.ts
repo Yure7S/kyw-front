@@ -6,6 +6,14 @@ import { ErrorSpanComponent } from '../../shared/components/error-span/error-spa
 import { IdValuePipe } from '../../shared/pipes/id-value.pipe';
 import { ValidationErrorPipe } from '../../shared/pipes/validation-error.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardContainerComponent } from '../../shared/compontents/card-container/card-container.component';
+import { SeparatorRowComponent } from '../../shared/compontents/separator-row/separator-row.component';
+import { Title1Component } from '../../shared/compontents/title-1/title-1.component';
+import { ParagraphComponent } from '../../shared/compontents/paragraph/paragraph.component';
+import { ButtonMainActionComponent } from '../../shared/compontents/buttons/button-main-action/button-main-action.component';
+import { ArrowRedirectComponent } from '../../shared/compontents/arrow-redirect/arrow-redirect.component';
+import { IconsModule } from '../icons/icons.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,18 +22,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainInputComponent,
     ErrorSpanComponent,
     IdValuePipe,
-    ValidationErrorPipe
+    ValidationErrorPipe,
+    CardContainerComponent,
+    SeparatorRowComponent,
+    Title1Component,
+    ParagraphComponent,
+    ButtonMainActionComponent,
+    ArrowRedirectComponent,
   ],
   imports: [
     CommonModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    FormsModule
+    FormsModule,
+    IconsModule,
+    RouterModule
   ],
   exports: [
+    FormsModule,
     MainInputComponent,
     ReactiveFormsModule,
-    FormsModule,
+    CardContainerComponent,
+    SeparatorRowComponent,
+    Title1Component,
+    ParagraphComponent,
+    ButtonMainActionComponent,
+    ArrowRedirectComponent,
   ],
   providers: [
     provideNgxMask(),
