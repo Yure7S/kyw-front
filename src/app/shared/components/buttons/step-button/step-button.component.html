@@ -1,0 +1,10 @@
+<button
+    title={{titleValue}}
+    [class.back]="back"
+    [class.normal]="normal"
+    (click)="onClick.emit()"
+    [class]="status"
+    [routerLink]="routerLinkValue">
+    <ng-content></ng-content>
+    <fa-icon *ngIf="!normal" icon="arrow-right"></fa-icon>
+</button>
