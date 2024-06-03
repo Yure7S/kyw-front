@@ -15,6 +15,10 @@ import { ArrowRedirectComponent } from '../../shared/components/arrow-redirect/a
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
 import { HighlightLinkComponent } from '../../shared/components/highlight-link/highlight-link.component';
+import { SingleContainerComponent } from '../../shared/components/single-container/single-container.component';
+import { TextareaComponent } from '../../shared/components/textarea/textarea.component';
+import { StepButtonComponent } from '../../shared/components/buttons/step-button/step-button.component';
+import { ProfileImageInputComponent } from '../../shared/components/profile-image-input/profile-image-input.component';
 
 
 
@@ -31,6 +35,10 @@ import { HighlightLinkComponent } from '../../shared/components/highlight-link/h
     ButtonMainActionComponent,
     ArrowRedirectComponent,
     HighlightLinkComponent,
+    SingleContainerComponent,
+    TextareaComponent,
+    StepButtonComponent,
+    ProfileImageInputComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +60,10 @@ import { HighlightLinkComponent } from '../../shared/components/highlight-link/h
     ButtonMainActionComponent,
     ArrowRedirectComponent,
     HighlightLinkComponent,
+    SingleContainerComponent,
+    TextareaComponent,
+    StepButtonComponent,
+    ProfileImageInputComponent,
   ],
   providers: [
     provideNgxMask(),
