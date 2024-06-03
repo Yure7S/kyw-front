@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.box-input {
+  gap: 20px;
+}
+
+.box-buttons {
+  justify-content: flex-end;
+  margin-top: 40px;
+  gap: 20px;
+
+  > * {
+    width: calc(50% - 10px);
+  }
+}
