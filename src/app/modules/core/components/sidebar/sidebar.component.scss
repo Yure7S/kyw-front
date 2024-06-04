@@ -1,0 +1,11 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+aside {
+  background-color: $color-secondary-700;
+  width: 260px;
+  height: 100%;
+}
