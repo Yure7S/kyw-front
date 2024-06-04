@@ -4,7 +4,7 @@
            <app-arrow-redirect></app-arrow-redirect>
        </div>
        <app-separator-row></app-separator-row>
-       <div class="content">
+       <div class="content" [style.padding.px]="noPadding ? 0 : 25">
            <ng-content></ng-content>
        </div>
    </app-card-container>
