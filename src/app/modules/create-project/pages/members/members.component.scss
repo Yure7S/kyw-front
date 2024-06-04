@@ -33,6 +33,10 @@ form {
       font-size: $text-base;
       border-bottom: 1px solid $color-base-300;
 
+      p {
+        flex-grow: 1;
+      }
+
       span {
         margin-right: 10px;
       }
