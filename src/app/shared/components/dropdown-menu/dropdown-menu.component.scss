@@ -1,0 +1,45 @@
+@import 'variables';
+
+:host {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.dropdown-menu {
+  position: relative;
+
+  .button-dropdown-menu {
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 25px;
+    height: 25px;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    color: $color-base-600;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: $color-base-200;
+    }
+    
+    &:active {
+      background-color: $color-base-400;
+    }
+  }
+  
+  .menu {
+    z-index: 2;
+    right: 0px;
+    transform-origin: top;
+    top: calc(100% + 5px);
+    position: absolute;
+    border: 1px solid $color-base-200;
+    border-radius: 5px;
+    background-color: $color-base-100;
+    padding: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123) ;
+  }
+}

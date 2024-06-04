@@ -1,0 +1,11 @@
+<section class="flex align">
+   <app-card-container [noPadding]="true" class="card-container">
+       <div class="card-head">
+           <app-arrow-redirect></app-arrow-redirect>
+       </div>
+       <app-separator-row></app-separator-row>
+       <div class="content" [style.padding.px]="noPadding ? 0 : 25">
+           <ng-content></ng-content>
+       </div>
+   </app-card-container>
+</section>

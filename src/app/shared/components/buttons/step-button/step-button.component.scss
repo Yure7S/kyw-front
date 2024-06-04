@@ -1,0 +1,83 @@
+@import "variables";
+
+:host {
+  width: 100%;
+  display: block;
+}
+
+@mixin defaultProperties($color) {
+  background-color: $color;
+  transition: 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    gap: 20px;
+  }
+
+  &:active {
+    filter: brightness(0.9);
+  }
+}
+
+button {
+  @include defaultProperties($color-secondary-700);
+  border-radius: 5px;
+  font-family: $font-family-secondary;
+  justify-content: flex-end;
+  color: $color-base-100;
+  font-size: $text-sm;
+  white-space: nowrap;
+  transition: 0.2s ease;
+  align-items: center;
+  padding: 10px 13px;
+  font-weight: 500;
+  display: flex;
+  width: 100%;
+  border: 0px;
+  gap: 10px;
+
+  &.back {
+    background-color: $color-base-300;
+    background-image: none;
+    color: $color-base-600;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+
+    fa-icon {
+      display: block;
+      transform: rotate(180deg);
+    }
+  }
+
+  &.normal {
+    background-image: initial;
+    justify-content: center
+  }
+}
+
+.light {
+  @include defaultProperties($color-base-200);
+  font-family: $font-family-secondary;
+  color: $color-base-600;
+  font-size: $text-sm;
+
+  &:hover {
+    color: $color-base-400;
+  }
+}
+
+.warn {
+  @include defaultProperties($color-warn);
+}
+
+.success {
+  @include defaultProperties($color-success);
+}
+
+.alert {
+  @include defaultProperties($color-alert);
+}
+
+.info {
+  @include defaultProperties($color-primary-900);
+}

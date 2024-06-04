@@ -2,34 +2,30 @@ import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/cor
 import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-main-input',
-  templateUrl: './main-input.component.html',
-  styleUrls: ['./main-input.component.scss'],
+  selector: 'app-textarea',
+  templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => MainInputComponent),
+    useExisting: forwardRef(() => TextareaComponent),
     multi: true
   }]
 })
-export class MainInputComponent {
+export class TextareaComponent {
   @Output() onBlur: EventEmitter<any> = new EventEmitter()
   @Input({ required: true }) placeholder!: string
   @Input({ required: true }) control!: FormControl
   @Input() errorMessages!: object
   @Input() isRequired: boolean = true
   @Input() isDisabled: boolean = false
-  @Input() maskValue?: string
-  @Input() formSubmitted: boolean = false
-  @Input() white: boolean = false
-  @Input() type?: string
-  @Input() value?: string
+  @Input() optional: boolean = false
+  @Input() value?: string = ''
 
   private onChanged = (value: string) => { }
   public onTouched = (v: any) => { }
 
   writeValue(value: string): void {
-    const valueTrim = value && value.toString().trim()
-    this.onChanged(this.removeSpecialCharacters(value))
+    this.onChanged(value)
     this.value = value
   }
 
@@ -47,11 +43,5 @@ export class MainInputComponent {
 
   handleBlur() {
     this.onBlur.emit()
-  }
-
-  removeSpecialCharacters(value: string) {
-    return this.maskValue != undefined
-      ? value.replace(/[^a-zA-Z0-9]/g, '')
-      : value
   }
 }
