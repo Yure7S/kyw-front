@@ -1,3 +1,50 @@
+@import 'variables';
+
+@mixin defaultColors($border, $shadow) {
+  border-color: $border;
+  box-shadow: 0px 0px 0px 9px $shadow;
+}
+
 :host {
   display: block;
+}
+
+label {
+  border: 2px solid $color-base-300;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../../../../assets/images/camera.png');
+  background-repeat: no-repeat;
+  background-size: 35%;
+  aspect-ratio: 1/1;
+  background-position: 50%;
+  transition: 0.2s ease;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $color-primary-700;
+  }
+
+  .content-label {
+    height: 100%;
+    width: 100%;
+
+    input {
+      display: none;
+    }
+  }
+}
+
+.invalid {
+  @include defaultColors($color-warn, $color-warn-light)
+}
+
+.valid {
+  @include defaultColors($color-success, $color-success-light)
+}
+
+.dragOver {
+  @include defaultColors($color-primary-700, $color-primary-200)
 }
