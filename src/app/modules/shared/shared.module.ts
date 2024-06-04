@@ -19,6 +19,7 @@ import { SingleContainerComponent } from '../../shared/components/single-contain
 import { TextareaComponent } from '../../shared/components/textarea/textarea.component';
 import { StepButtonComponent } from '../../shared/components/buttons/step-button/step-button.component';
 import { ProfileImageInputComponent } from '../../shared/components/profile-image-input/profile-image-input.component';
+import { AddButtonComponent } from '../../shared/components/buttons/add-button/add-button.component';
 
 
 
@@ -39,6 +40,7 @@ import { ProfileImageInputComponent } from '../../shared/components/profile-imag
     TextareaComponent,
     StepButtonComponent,
     ProfileImageInputComponent,
+    AddButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -64,6 +66,7 @@ import { ProfileImageInputComponent } from '../../shared/components/profile-imag
     TextareaComponent,
     StepButtonComponent,
     ProfileImageInputComponent,
+    AddButtonComponent,
   ],
   providers: [
     provideNgxMask(),

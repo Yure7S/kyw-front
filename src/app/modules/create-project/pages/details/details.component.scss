@@ -2,29 +2,33 @@
   display: block;
 }
 
-.box-input {
-  gap: 20px;
+.content {
+  padding: 0 25px 25px;
 
-  .box-project-image {
-    gap: 15px;
-    
-    .project-image {
-      max-width: 90px;
-      width: 100%;
-    }
-    
-    .image-description {
-      gap: 5px;
+  form {
+    gap: 20px;
+
+    .box-project-image {
+      gap: 15px;
+
+      .project-image {
+        max-width: 90px;
+        width: 100%;
+      }
+
+      .image-description {
+        gap: 5px;
+      }
     }
   }
-}
 
-.box-buttons {
-  justify-content: flex-end;
-  margin-top: 40px;
-  gap: 20px;
+  .box-buttons {
+    justify-content: flex-end;
+    margin-top: 40px;
+    gap: 20px;
 
-  > * {
-    width: calc(50% - 10px);
+    >* {
+      width: calc(50% - 10px);
+    }
   }
 }

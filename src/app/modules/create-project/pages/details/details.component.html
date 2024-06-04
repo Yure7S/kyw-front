@@ -1,14 +1,16 @@
-<div class="box-input flex-column">
-   <div class="box-project-image flex align">
-      <app-profile-image-input class="project-image" idValue="project-image"></app-profile-image-input>
-      <div class="flex-column image-description">
-         <app-paragraph>Adicione uma imagem ao projeto</app-paragraph>
-         <app-paragraph>(opcional)</app-paragraph>
+<div class="content">
+   <form class="flex-column">
+      <div class="box-project-image flex align">
+         <app-profile-image-input class="project-image" idValue="project-image"></app-profile-image-input>
+         <div class="flex-column image-description">
+            <app-paragraph>Adicione uma imagem ao projeto</app-paragraph>
+            <app-paragraph>(opcional)</app-paragraph>
+         </div>
       </div>
+      <app-main-input [control]="temp" placeholder="Título"></app-main-input>
+      <app-textarea [control]="temp" placeholder="Descrição" [optional]="true"></app-textarea>
+   </form>
+   <div class="box-buttons flex align">
+      <app-step-button routerLink="../membros">Avançar</app-step-button>
    </div>
-   <app-main-input [control]="temp" placeholder="Título"></app-main-input>
-   <app-textarea [control]="temp" placeholder="Descrição" [optional]="true"></app-textarea>
-</div>
-<div class="box-buttons flex align">
-   <app-step-button>Avançar</app-step-button>
 </div>
