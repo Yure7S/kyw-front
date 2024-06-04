@@ -1,0 +1,11 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+div {
+  background-color: $color-secondary-900;
+  width: 40px;
+  height: 100%;
+}
