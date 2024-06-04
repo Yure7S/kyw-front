@@ -20,6 +20,7 @@ export class MainInputComponent {
   @Input() isDisabled: boolean = false
   @Input() maskValue?: string
   @Input() formSubmitted: boolean = false
+  @Input() white: boolean = false
   @Input() type?: string
   @Input() value?: string
 
