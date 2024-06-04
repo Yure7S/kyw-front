@@ -4,6 +4,19 @@
 
 .box-input {
   gap: 20px;
+
+  .box-project-image {
+    gap: 15px;
+    
+    .project-image {
+      max-width: 90px;
+      width: 100%;
+    }
+    
+    .image-description {
+      gap: 5px;
+    }
+  }
 }
 
 .box-buttons {
