@@ -1,3 +1,31 @@
 :host {
   display: block;
 }
+
+form {
+  padding: 15px;
+  background-color: #f3f3f3;
+  border: 2px solid #e0e0e0;
+
+  .paragraph {
+    margin-bottom: 10px;
+  }
+
+  div {
+    gap: 15px;
+
+    .email-input {
+      flex-grow: 1;
+    }
+  }
+}
+
+.content {
+  padding: 25px;
+
+  .box-buttons {
+    justify-content: flex-end;
+    margin-top: 40px;
+    gap: 20px;
+  }
+}

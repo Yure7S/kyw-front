@@ -1,1 +1,16 @@
-<p>members works!</p>
+<form action="">
+    <app-paragraph class="paragraph">Adicionar Membro</app-paragraph>
+    <div class="flex align">
+        <app-main-input class="email-input" [white]="true" [control]="temp" placeholder="E-mail do membro"></app-main-input>
+        <app-add-button></app-add-button>
+    </div>
+</form>
+
+<div class="content">
+
+    
+    <div class="box-buttons flex align">
+        <app-step-button routerLink="../detalhes" [back]="true">Voltar</app-step-button>
+        <app-step-button [status]="statusEnum.Info" [normal]="true">Finalizar</app-step-button>
+    </div>
+</div>
