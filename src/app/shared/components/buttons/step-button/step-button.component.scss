@@ -37,7 +37,7 @@ button {
   gap: 10px;
 
   &.back {
-    background-color: $color-base-200;
+    background-color: $color-base-300;
     background-image: none;
     color: $color-base-600;
     justify-content: flex-end;
@@ -76,4 +76,8 @@ button {
 
 .alert {
   @include defaultProperties($color-alert);
+}
+
+.info {
+  @include defaultProperties($color-primary-900);
 }
