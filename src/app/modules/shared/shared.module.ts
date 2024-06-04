@@ -20,6 +20,7 @@ import { TextareaComponent } from '../../shared/components/textarea/textarea.com
 import { StepButtonComponent } from '../../shared/components/buttons/step-button/step-button.component';
 import { ProfileImageInputComponent } from '../../shared/components/profile-image-input/profile-image-input.component';
 import { AddButtonComponent } from '../../shared/components/buttons/add-button/add-button.component';
+import { DropdownMenuComponent } from '../../shared/components/dropdown-menu/dropdown-menu.component';
 
 
 
@@ -41,6 +42,7 @@ import { AddButtonComponent } from '../../shared/components/buttons/add-button/a
     StepButtonComponent,
     ProfileImageInputComponent,
     AddButtonComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -67,6 +69,7 @@ import { AddButtonComponent } from '../../shared/components/buttons/add-button/a
     StepButtonComponent,
     ProfileImageInputComponent,
     AddButtonComponent,
+    DropdownMenuComponent,
   ],
   providers: [
     provideNgxMask(),
