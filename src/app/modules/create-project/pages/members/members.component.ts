@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Status } from 'src/app/core/enums/status.enum';
+import { TrackByService } from 'src/app/core/utils/track-by.service';
 
 @Component({
   selector: 'app-members',
@@ -8,7 +9,9 @@ import { Status } from 'src/app/core/enums/status.enum';
   styleUrls: ['./members.component.scss']
 })
 export class MembersComponent {
-  temp = new FormControl()
+  trackByService = inject(TrackByService)
+
+  emailControl = new FormControl('', [Validators.required])
   statusEnum: typeof Status = Status
 
   memberEmailList: string[] = [
@@ -21,7 +24,10 @@ export class MembersComponent {
     this.memberEmailList = this.memberEmailList.filter(item => item != email)
   } 
   
-  addEmail(email: string): void {
-    this.memberEmailList.push(email)
+  addEmail(): void {
+    if(this.emailControl.valid) {
+      this.memberEmailList.push(this.emailControl.value!)
+      this.emailControl.reset()
+    }
   } 
 }

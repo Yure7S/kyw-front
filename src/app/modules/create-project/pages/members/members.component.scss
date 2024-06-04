@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
   display: block;
 }
@@ -22,6 +24,20 @@ form {
 
 .content {
   padding: 25px;
+
+  .email-list {
+    li {
+      padding: 13px;
+      color: $color-base-600;
+      font-family: $font-family-tertiary;
+      font-size: $text-base;
+      border-bottom: 1px solid $color-base-300;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
 
   .box-buttons {
     justify-content: flex-end;

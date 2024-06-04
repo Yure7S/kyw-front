@@ -6,7 +6,6 @@ import { Injectable, TrackByFunction } from '@angular/core';
 export class TrackByService {
 
   public track(index: number, item: any): TrackByFunction<any> {
-    console.log(item.id)
     return item.id
   }
 }

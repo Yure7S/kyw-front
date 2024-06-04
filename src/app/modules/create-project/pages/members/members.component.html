@@ -1,14 +1,16 @@
 <form action="">
     <app-paragraph class="paragraph">Adicionar Membro</app-paragraph>
     <div class="flex align">
-        <app-main-input class="email-input" [white]="true" [control]="temp" placeholder="E-mail do membro"></app-main-input>
-        <app-add-button></app-add-button>
+        <app-main-input [formControl]="emailControl" class="email-input" [white]="true" [control]="emailControl"
+            placeholder="E-mail do membro"></app-main-input>
+        <app-add-button (onClick)="addEmail()"></app-add-button>
     </div>
 </form>
 
 <div class="content">
-
-    
+    <ul class="email-list">
+        <li *ngFor="let email of memberEmailList; trackBy: trackByService.track; index as i"><span>{{i + 1}}</span> {{email}}</li>
+    </ul>
     <div class="box-buttons flex align">
         <app-step-button routerLink="../detalhes" [back]="true">Voltar</app-step-button>
         <app-step-button [status]="statusEnum.Info" [normal]="true">Finalizar</app-step-button>
