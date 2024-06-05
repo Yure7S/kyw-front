@@ -11,7 +11,7 @@ aside {
   width: 250px;
 
   .aside-header {
-    padding: 15px 20px;
+    padding: 15px 18px;
 
     .content {
       h1 {
@@ -23,12 +23,16 @@ aside {
       }
       
       button {
-        padding: 10px 7px;
+        padding: 11px 7px;
         border-radius: 5px;
         background-color: $color-secondary-900;
         border: 0;
         font-size: 11px;
         color: $color-base-100;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
