@@ -2,24 +2,24 @@
    <nav>
       <ul class="flex-column align">
          <li>
-            <a>
+            <a routerLink="projetos" routerLinkActive="active">
                <fa-icon [icon]="['far', 'chart-bar']"></fa-icon>
             </a>
          </li>
          <li>
-            <a>
+            <a routerLink="tarefas" routerLinkActive="active">
                <fa-icon icon="list-check"></fa-icon>
             </a>
          </li>
          <li>
-            <a class="active">
+            <a routerLink="notificacoes" routerLinkActive="active">
                <fa-icon [icon]="['far', 'bell']"></fa-icon>
             </a>
          </li>
       </ul>
    </nav>
    <div class="config">
-      <a>
+      <a routerLinkActive="active">
          <fa-icon icon="gear"></fa-icon>
       </a>
    </div>
