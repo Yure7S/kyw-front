@@ -1,0 +1,39 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+aside {
+  height: 100%;
+  border-left: 1px solid $color-secondary-900;
+  background-color: $color-secondary-700;
+  width: 250px;
+
+  .aside-header {
+    padding: 15px 20px;
+
+    .content {
+      h1 {
+        flex-grow: 1;
+        color: $color-base-100;
+        font-family: $font-family-tertiary;
+        font-size: $text-lg;
+        font-weight: 500;
+      }
+      
+      button {
+        padding: 10px 7px;
+        border-radius: 5px;
+        background-color: $color-secondary-900;
+        border: 0;
+        font-size: 11px;
+        color: $color-base-100;
+      }
+    }
+
+    .search-input {
+      margin-top: 15px;
+    }
+  }
+}
