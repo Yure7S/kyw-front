@@ -23,6 +23,8 @@ import { AddButtonComponent } from '../../shared/components/buttons/add-button/a
 import { DropdownMenuComponent } from '../../shared/components/dropdown-menu/dropdown-menu.component';
 import { MenuButtonComponent } from '../../shared/components/buttons/menu-button/menu-button.component';
 import { ClickOutsideCloseDirective } from '../../shared/directives/click-outside-close.directive';
+import { SidebarComponent } from '../../shared/components/sidebars/sidebar/sidebar.component';
+import { SearchInputComponent } from 'src/app/shared/components/search-input/search-input.component';
 
 
 
@@ -47,6 +49,8 @@ import { ClickOutsideCloseDirective } from '../../shared/directives/click-outsid
     DropdownMenuComponent,
     MenuButtonComponent,
     ClickOutsideCloseDirective,
+    SidebarComponent,
+    SearchInputComponent,
   ],
   imports: [
     CommonModule,
@@ -54,7 +58,7 @@ import { ClickOutsideCloseDirective } from '../../shared/directives/click-outsid
     NgxMaskPipe,
     FormsModule,
     IconsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     IconsModule,
@@ -76,6 +80,8 @@ import { ClickOutsideCloseDirective } from '../../shared/directives/click-outsid
     AddButtonComponent,
     DropdownMenuComponent,
     MenuButtonComponent,
+    SidebarComponent,
+    SearchInputComponent,
   ],
   providers: [
     provideNgxMask(),
