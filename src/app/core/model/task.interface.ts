@@ -1,13 +1,19 @@
 export interface Task {
    id: string,
-   name: string,
+   status: string,
+   criticality: string,
+   title: string,
    description: string,
-   creator: {
+   attachments: string,
+   createAt: string,
+   completedAt: string,
+   project: {
+      projectId: string,
+      name: string
+   },
+   attributedTo: {
       userId: string,
       nickname: string
    },
-   imageUrl: string,
-   linkGroup: string,
-   pin: boolean,
-   createAt: string
+   pin: boolean
 }
