@@ -57,6 +57,7 @@ import { ClickOutsideCloseDirective } from '../../shared/directives/click-outsid
     RouterModule
   ],
   exports: [
+    IconsModule,
     FormsModule,
     IdValuePipe,
     MainInputComponent,
