@@ -1,11 +1,58 @@
-@import 'variables';
+@import "variables";
 
 :host {
   display: block;
 }
 
-div {
+aside {
   background-color: $color-secondary-900;
-  width: 40px;
   height: 100%;
+  padding: 5px;
+
+  a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: $color-base-100;
+    background-color: $color-secondary-900;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    transform: 200ms ease;
+    width: 37px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.692);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      transform: translateX(-30%);
+      background-color: $color-primary-900;
+      transform: 200ms ease;
+      border-radius: 10px;
+      height: 45%;
+      width: 3px;
+      opacity: 0;
+      left: 0;
+    }
+
+    &.active {
+      background-color: $color-secondary-700;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  nav {
+    flex-grow: 1;
+
+    ul {
+      gap: 5px;
+    }
+  }
 }
