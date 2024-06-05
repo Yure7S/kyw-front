@@ -1,0 +1,21 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+a {
+  padding: 14px;
+  display: block;
+  border-radius: 5px;
+  font-family: $font-family-tertiary;
+  border: 1px solid $color-base-400;
+  color: $color-base-100;
+  font-size: $text-base;
+
+  h3 {
+    font-size: $text-base;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+}
