@@ -1,0 +1,16 @@
+<aside>
+   <div class="aside-header">
+      <div class="content flex align">
+         <h1>{{title}}</h1>
+         <button>
+            <fa-icon icon="chevron-left"></fa-icon>
+         </button>
+      </div>
+      <div class="search-input">
+         <ng-content select="[searchInput]"></ng-content>
+      </div>
+   </div>
+   <div class="sidebar-body">
+      <ng-content select="[content]"></ng-content>
+   </div>
+</aside>
