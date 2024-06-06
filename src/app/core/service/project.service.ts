@@ -16,7 +16,7 @@ export class ProjectService {
   api = environment.apiUrl
 
   getAll(pageSize: number = 10, pageNumber: number = 0): Observable<GetterResponse<Project[]>> {
-    return this.http.get<GetterResponse<Project[]>>(`${this.api}/projects?page=${pageNumber}&size=10&sort=asc`, {
+    return this.http.get<GetterResponse<Project[]>>(`${this.api}/projects`, {
       params: {
         page: pageNumber,
         size: pageSize,
