@@ -8,6 +8,7 @@ import { ErrorResponse } from 'src/app/core/model/error-response.interface';
 import { LoginResponse } from 'src/app/core/model/login-response.interface';
 import { Login } from 'src/app/core/model/login.interface';
 import { AuthService } from 'src/app/core/service/auth.service';
+import { CurrentUserService } from 'src/app/core/utils/current-user.service';
 import { validationErrorMessages } from 'src/app/shared/error-message-validators/validation-error-messages';
 
 @Component({
@@ -17,6 +18,7 @@ import { validationErrorMessages } from 'src/app/shared/error-message-validators
 })
 export class LoginComponent {
   formBuilder = inject(FormBuilder)
+  currentUserService = inject(CurrentUserService)
   toastService = inject(ToastrService)
   authService = inject(AuthService)
   router = inject(Router)
@@ -38,6 +40,7 @@ export class LoginComponent {
           localStorage.clear()
           localStorage.setItem('session', JSON.stringify(r))
           this.toastService.success('Login realizado com sucesso!', 'Sucesso')
+          this.currentUserService.setCurrentUser()
           this.router.navigateByUrl('')
         },
         error: (error: ErrorResponse) => this.response = error,
