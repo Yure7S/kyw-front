@@ -8,12 +8,14 @@
     </ng-container>
     <ng-container form>
         <form [formGroup]="form" class="flex-column">
-            <app-main-input formControlName="email" placeholder="Email ou telefone" [control]="form.controls.email"></app-main-input>
-            <app-main-input formControlName="password" type="password" placeholder="Senha" [control]="form.controls.password"></app-main-input>
+            <app-main-input [errorMessages]="errorMessages.default" formControlName="email" placeholder="Email ou telefone" [control]="form.controls.email"></app-main-input>
+            <app-main-input [errorMessages]="errorMessages.password" formControlName="password" type="password" placeholder="Senha" [control]="form.controls.password"></app-main-input>
         </form>
     </ng-container>
     <ng-container response>
-        
+        <app-message-panel [status]="statusEnum.Warn" *ngIf="!!response">
+        {{response.message}}
+        </app-message-panel>
     </ng-container>
     <ng-container buttons>
         <app-button-main-action (onCLick)="onSubmit()" [fullWidth]="true">LOGIN</app-button-main-action>
