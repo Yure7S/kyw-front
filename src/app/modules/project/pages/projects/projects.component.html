@@ -7,7 +7,7 @@
    </ng-container>
    <ng-container content>
       <div class="project-list flex-column">
-         <app-sidebar-project-card *ngFor="let project of projectList; trackBy: trackByService.track" [project]="project"></app-sidebar-project-card>
+         <app-sidebar-project-card *ngFor="let project of (projectList$ | async)?.content; trackBy: trackByService.track" [project]="project"></app-sidebar-project-card>
       </div>
    </ng-container>
 </app-sidebar>
