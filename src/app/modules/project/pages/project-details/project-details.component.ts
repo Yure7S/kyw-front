@@ -20,16 +20,16 @@ export class ProjectDetailsComponent implements OnInit {
 
   sidebarContent: Sidebar[] = [
     {
+      content: 'Tarefas',
+      link: 'tarefas'
+    },
+    {
       content: 'Chat',
       link: 'chat'
     },
     {
       content: 'Chat privado',
       link: 'chat-privado'
-    },
-    {
-      content: 'Tarefas',
-      link: 'tarefas'
     },
     {
       content: 'Membros',

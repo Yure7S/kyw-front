@@ -22,17 +22,27 @@ ul {
       font-family: $font-family-tertiary;
       color: $color-base-100;
       min-width: max-content;
+      position: relative;
 
       &:hover {
         cursor: pointer;
         filter: brightness(0.97);
       }
 
-      &.active {
-        background-color: $color-primary-100;
-        color: $color-primary-900;
-        border-top: 2px solid $color-primary-900;
-        font-weight: 600;
+      &::before {
+        content: '';
+        height: 3px;
+        transition: 100ms ease;
+        width: 100%;
+        background-color: $color-primary-900;
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      &.active::before {
+        opacity: 1;
       }
     }
   }
