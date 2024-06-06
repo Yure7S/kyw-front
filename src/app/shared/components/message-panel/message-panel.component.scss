@@ -16,8 +16,9 @@
 .card-error {
   @include colors($color-primary-100, $color-primary-900, $color-primary-900);
   font-family: $font-family-tertiary;
+  font-size: $text-base;
   border-radius: .30rem;
-  padding: 20px 24px;
+  padding: 15px 24px;
   word-spacing: 0.09rem;
   letter-spacing: 0.01rem;
   line-height: 1.5;
