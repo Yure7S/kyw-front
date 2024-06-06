@@ -25,6 +25,7 @@ import { MenuButtonComponent } from '../../shared/components/buttons/menu-button
 import { ClickOutsideCloseDirective } from '../../shared/directives/click-outside-close.directive';
 import { SidebarComponent } from '../../shared/components/sidebars/sidebar/sidebar.component';
 import { SearchInputComponent } from 'src/app/shared/components/search-input/search-input.component';
+import { MessagePanelComponent } from '../../shared/components/message-panel/message-panel.component';
 
 
 
@@ -51,6 +52,7 @@ import { SearchInputComponent } from 'src/app/shared/components/search-input/sea
     ClickOutsideCloseDirective,
     SidebarComponent,
     SearchInputComponent,
+    MessagePanelComponent,
   ],
   imports: [
     CommonModule,
@@ -82,6 +84,7 @@ import { SearchInputComponent } from 'src/app/shared/components/search-input/sea
     MenuButtonComponent,
     SidebarComponent,
     SearchInputComponent,
+    MessagePanelComponent,
   ],
   providers: [
     provideNgxMask(),

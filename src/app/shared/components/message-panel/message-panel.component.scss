@@ -1,0 +1,48 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+@mixin colors ($background, $border, $contrast) {
+  background-color: $background;
+  border: 1px solid $border;
+
+  span {
+    color: $contrast;
+  }
+}
+
+.card-error {
+  @include colors($color-primary-100, $color-primary-900, $color-primary-900);
+  font-family: $font-family-tertiary;
+  font-size: $text-base;
+  border-radius: .30rem;
+  padding: 15px 24px;
+  word-spacing: 0.09rem;
+  letter-spacing: 0.01rem;
+  line-height: 1.5;
+
+  span {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+
+    fa-icon {
+      height: 1.1rem;
+    }
+  }
+}
+
+.success {
+  @include colors($color-success-light, $color-success, $color-success-strong);
+}
+
+.warn {
+  @include colors($color-warn-light, $color-warn, $color-warn-strong);
+}
+
+.alert {
+  @include colors($color-alert-light, $color-alert, $color-alert-strong);
+}
