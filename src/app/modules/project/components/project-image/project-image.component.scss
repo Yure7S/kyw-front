@@ -1,0 +1,16 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+img {
+  background-color: $color-base-100;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  width: 35px;
+
+  &.smaller {
+    width: 28px;
+  }
+}

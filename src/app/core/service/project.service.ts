@@ -25,4 +25,9 @@ export class ProjectService {
     }).pipe(shareReplay())
   }
 
+  getById(projectId: string): Observable<Project> {
+    return this.http.get<Project>(`${this.api}/projects/${projectId}`)
+      .pipe(shareReplay())
+  }
+
 }

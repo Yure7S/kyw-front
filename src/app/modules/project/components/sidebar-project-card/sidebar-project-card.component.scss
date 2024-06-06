@@ -17,13 +17,6 @@ button {
     cursor: pointer;
     background-color: transparentize($color: $color-secondary-900, $amount: 0.6);
   }
-
-  img {
-    background-color: $color-base-100;
-    aspect-ratio: 1/1;
-    border-radius: 5px;
-    width: 35px;
-  }
   
   .content {
     overflow: hidden;
