@@ -26,6 +26,7 @@ import { ClickOutsideCloseDirective } from '../../shared/directives/click-outsid
 import { SidebarComponent } from '../../shared/components/sidebars/sidebar/sidebar.component';
 import { SearchInputComponent } from 'src/app/shared/components/search-input/search-input.component';
 import { MessagePanelComponent } from '../../shared/components/message-panel/message-panel.component';
+import { SidebarTemplateComponent } from '../../shared/components/templates/sidebar-template/sidebar-template.component';
 
 
 
@@ -53,6 +54,7 @@ import { MessagePanelComponent } from '../../shared/components/message-panel/mes
     SidebarComponent,
     SearchInputComponent,
     MessagePanelComponent,
+    SidebarTemplateComponent,
   ],
   imports: [
     CommonModule,
@@ -85,6 +87,7 @@ import { MessagePanelComponent } from '../../shared/components/message-panel/mes
     SidebarComponent,
     SearchInputComponent,
     MessagePanelComponent,
+    SidebarTemplateComponent,
   ],
   providers: [
     provideNgxMask(),
