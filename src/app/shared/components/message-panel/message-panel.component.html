@@ -1,0 +1,17 @@
+<div 
+    [class]="'card-error ' + status">
+    <span>
+        <ng-container *ngIf="status == statusEnum.Success; else wardOrError">
+            <fa-icon icon="check-circle"/>
+        </ng-container>
+        <ng-template #wardOrError>
+            <ng-container *ngIf="[statusEnum.Alert, statusEnum.Warn].includes(status!); else default">
+                <fa-icon icon="triangle-exclamation"/>
+            </ng-container>
+        </ng-template>
+        <ng-template #default>
+            <fa-icon icon="circle-info"/>
+        </ng-template>
+        <ng-content></ng-content>
+    </span>
+</div>
