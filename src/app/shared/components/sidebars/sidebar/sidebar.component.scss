@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 :host {
   display: block;
@@ -8,10 +8,10 @@ aside {
   height: 100%;
   border-left: 1px solid $color-secondary-900;
   background-color: $color-secondary-700;
-  width: 250px;
+  width: 280px;
 
   .aside-header {
-    padding: 15px 18px;
+    padding: 15px 16px;
 
     .content {
       h1 {
@@ -21,7 +21,7 @@ aside {
         font-size: $text-lg;
         font-weight: 500;
       }
-      
+
       button {
         padding: 11px 7px;
         border-radius: 5px;
@@ -39,5 +39,9 @@ aside {
     .search-input {
       margin-top: 15px;
     }
+  }
+  
+  .sidebar-body {
+    padding: 5px 16px;
   }
 }
