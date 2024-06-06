@@ -8,6 +8,7 @@ import { authInterceptor } from './core/guard/interceptor/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
+import { ErrorHandlingInterceptor } from './core/guard/interceptor/error-handling.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
   providers: [
     provideHttpClient(
       withInterceptors([
-        authInterceptor
+        authInterceptor,
+        ErrorHandlingInterceptor
       ])
     )
   ],
