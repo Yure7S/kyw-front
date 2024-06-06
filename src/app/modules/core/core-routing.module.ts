@@ -6,8 +6,7 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'projetos' },
-      { path: 'projetos', loadChildren: () => import('../project/project.module').then(m => m.ProjectModule) },
+      { path: '', loadChildren: () => import('../project/project.module').then(m => m.ProjectModule) },
       { path: 'tarefas', loadChildren: () => import('../task/task.module').then(m => m.TaskModule) },
       { path: 'notificacoes', loadChildren: () => import('../notification/notification.module').then(m => m.NotificationModule) },
     ]

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { SidebarComponent } from 'src/app/shared/components/sidebars/sidebar/sidebar.component';
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'projetos'},
   {
-    path: '', component: ProjectsComponent,
+    path: 'projetos', component: ProjectsComponent,
     children: [
-
+      {path: ':projectId', component: SidebarComponent}
     ]
   }
 ];

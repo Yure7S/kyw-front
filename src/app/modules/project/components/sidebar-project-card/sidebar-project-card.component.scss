@@ -29,6 +29,8 @@ button {
     overflow: hidden;
     display: grid;
     gap: 0 6px;
+    justify-content: space-between;
+    text-align: left;
     grid-template-columns: 1fr min-content;
 
     * {
