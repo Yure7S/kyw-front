@@ -1,0 +1,60 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+button {
+  padding: 8px;
+  color: $color-base-100;
+  gap: 14px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: 200ms ease-out;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparentize($color: $color-secondary-900, $amount: 0.6);
+  }
+
+  img {
+    background-color: $color-base-100;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    width: 35px;
+  }
+  
+  .content {
+    overflow: hidden;
+    display: grid;
+    gap: 0 6px;
+    grid-template-columns: 1fr min-content;
+
+    * {
+      font-family: $font-family-tertiary;
+      font-size: $text-sm;
+      display: block;
+    }
+
+    h3, p {
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    h3 {
+      font-size: $text-base;
+    }
+
+    span {
+      font-size: calc($text-sm - 1px);
+    }
+
+    p {
+      margin-top: 3px;
+      grid-column: 2 span;
+      color: transparentize($color: $color-base-100, $amount: 0.25);
+    }
+  }
+}
