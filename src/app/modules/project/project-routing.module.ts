@@ -5,11 +5,20 @@ import { SidebarComponent } from 'src/app/shared/components/sidebars/sidebar/sid
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'projetos'},
+  { path: '', pathMatch: 'full', redirectTo: 'projetos' },
   {
     path: 'projetos', component: ProjectsComponent,
     children: [
-      {path: ':projectId', component: ProjectDetailsComponent}
+      {
+        path: ':projectId', component: ProjectDetailsComponent,
+        children: [
+          { path: '', pathMatch: 'full', redirectTo: 'tarefas' },
+          { path: 'tarefas', component: SidebarComponent },
+          { path: 'chat', component: SidebarComponent },
+          { path: 'chat-privado', component: SidebarComponent },
+          { path: 'membros', component: SidebarComponent },
+        ]
+      }
     ]
   }
 ];
