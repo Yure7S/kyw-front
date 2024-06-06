@@ -12,7 +12,6 @@ const routes: Routes = [
       { path: 'notificacoes', loadChildren: () => import('../notification/notification.module').then(m => m.NotificationModule) },
     ]
   },
-  { path: 'auth', loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule) },
   { path: 'criar-projeto', loadChildren: () => import('../create-project/create-project.module').then(m => m.CreateProjectModule) }
 ];
 
