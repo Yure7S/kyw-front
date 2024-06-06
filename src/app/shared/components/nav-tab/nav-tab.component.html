@@ -1,0 +1,10 @@
+<nav>
+   <ul class="flex">
+      <li *ngFor="let item of content; trackBy: trackByService.itemSideBarTrack()">
+         <a routerLinkActive="active" class="flex" [routerLink]="item.link">
+            <fa-icon *ngIf="item.icon" [icon]="item.icon"/>
+            {{ item.content }}
+         </a>
+      </li>
+   </ul>
+</nav>

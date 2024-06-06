@@ -27,6 +27,7 @@ import { SidebarComponent } from '../../shared/components/sidebars/sidebar/sideb
 import { SearchInputComponent } from 'src/app/shared/components/search-input/search-input.component';
 import { MessagePanelComponent } from '../../shared/components/message-panel/message-panel.component';
 import { SidebarTemplateComponent } from '../../shared/components/templates/sidebar-template/sidebar-template.component';
+import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.component';
 
 
 
@@ -55,6 +56,7 @@ import { SidebarTemplateComponent } from '../../shared/components/templates/side
     SearchInputComponent,
     MessagePanelComponent,
     SidebarTemplateComponent,
+    NavTabComponent,
   ],
   imports: [
     CommonModule,
@@ -88,6 +90,7 @@ import { SidebarTemplateComponent } from '../../shared/components/templates/side
     SearchInputComponent,
     MessagePanelComponent,
     SidebarTemplateComponent,
+    NavTabComponent,
   ],
   providers: [
     provideNgxMask(),
