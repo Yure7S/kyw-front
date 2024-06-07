@@ -1,0 +1,23 @@
+<app-task-info-template>
+   <ng-container taskInfo>
+      <section>
+         <app-task-status [status]="task.status"></app-task-status>
+         <app-task-title class="task-title" [task]="task"></app-task-title>
+
+         <div class="box-criticality flex align">
+            <app-h3-title>Prioridade:</app-h3-title>
+            <app-task-criticality [criticality]="task.criticality"></app-task-criticality>
+         </div>
+
+         <app-h3-title class="h3-title">Descrição</app-h3-title>
+         <app-paragraph>
+            {{task.description}}
+         </app-paragraph>
+      </section>
+   </ng-container>
+   <ng-container actions>
+      <div class="container-task-actions">
+         
+      </div>
+   </ng-container>
+</app-task-info-template>

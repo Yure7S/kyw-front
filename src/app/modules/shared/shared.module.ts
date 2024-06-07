@@ -32,6 +32,7 @@ import { TaskStatusComponent } from '../../shared/components/task-status/task-st
 import { TaskTitleComponent } from '../../shared/components/task-title/task-title.component';
 import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.component';
 import { TaskCriticalityComponent } from '../../shared/components/task-criticality/task-criticality.component';
+import { TaskInfoTemplateComponent } from '../../shared/components/templates/task-info-template/task-info-template.component';
 
 
 
@@ -65,6 +66,7 @@ import { TaskCriticalityComponent } from '../../shared/components/task-criticali
     TaskTitleComponent,
     H3TitleComponent,
     TaskCriticalityComponent,
+    TaskInfoTemplateComponent,
   ],
   imports: [
     CommonModule,
@@ -103,6 +105,7 @@ import { TaskCriticalityComponent } from '../../shared/components/task-criticali
     TaskTitleComponent,
     H3TitleComponent,
     TaskCriticalityComponent,
+    TaskInfoTemplateComponent,
   ],
   providers: [
     provideNgxMask(),

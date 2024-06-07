@@ -1,0 +1,28 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+section {
+  padding: 50px;
+
+  .task-title {
+    margin-top: 20px;
+  }
+
+  > .h3-title {
+    margin-bottom: 5px;
+  }
+
+  .box-criticality {
+    margin: 23px 0;
+    gap: 7px;
+  }
+}
+
+.container-task-actions {
+  background-color: $color-secondary-100;
+  padding: 15px;
+  height: 100%;
+}
