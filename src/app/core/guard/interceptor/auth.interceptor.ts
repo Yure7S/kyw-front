@@ -8,7 +8,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const apiUrl: string = environment.apiUrl
 
   const routerWhiteList: string[] = [
-    `${apiUrl}/auth/signin`
+    `${apiUrl}/auth/signin`,
+    `${apiUrl}/auth/refreshtoken`
   ]
 
   return next(!routerWhiteList.includes(req.url)
