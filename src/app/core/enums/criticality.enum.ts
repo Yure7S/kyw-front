@@ -1,5 +1,5 @@
 export enum Criticality {
-   HIGH, 
-   MEDIUM, 
-   LOW
+   High = 'High', 
+   Medium = 'Medium', 
+   Low = 'Low'
 }
