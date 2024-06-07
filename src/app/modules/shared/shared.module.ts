@@ -29,6 +29,8 @@ import { MessagePanelComponent } from '../../shared/components/message-panel/mes
 import { SidebarTemplateComponent } from '../../shared/components/templates/sidebar-template/sidebar-template.component';
 import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.component';
 import { TaskStatusComponent } from '../../shared/components/task-status/task-status.component';
+import { TaskTitleComponent } from '../../shared/components/task-title/task-title.component';
+import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.component';
 
 
 
@@ -59,6 +61,8 @@ import { TaskStatusComponent } from '../../shared/components/task-status/task-st
     SidebarTemplateComponent,
     NavTabComponent,
     TaskStatusComponent,
+    TaskTitleComponent,
+    H3TitleComponent,
   ],
   imports: [
     CommonModule,
@@ -94,6 +98,8 @@ import { TaskStatusComponent } from '../../shared/components/task-status/task-st
     SidebarTemplateComponent,
     NavTabComponent,
     TaskStatusComponent,
+    TaskTitleComponent,
+    H3TitleComponent,
   ],
   providers: [
     provideNgxMask(),
