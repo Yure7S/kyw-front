@@ -31,6 +31,7 @@ import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.compone
 import { TaskStatusComponent } from '../../shared/components/task-status/task-status.component';
 import { TaskTitleComponent } from '../../shared/components/task-title/task-title.component';
 import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.component';
+import { TaskCriticalityComponent } from '../../shared/components/task-criticality/task-criticality.component';
 
 
 
@@ -63,6 +64,7 @@ import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.co
     TaskStatusComponent,
     TaskTitleComponent,
     H3TitleComponent,
+    TaskCriticalityComponent,
   ],
   imports: [
     CommonModule,
@@ -100,6 +102,7 @@ import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.co
     TaskStatusComponent,
     TaskTitleComponent,
     H3TitleComponent,
+    TaskCriticalityComponent,
   ],
   providers: [
     provideNgxMask(),
