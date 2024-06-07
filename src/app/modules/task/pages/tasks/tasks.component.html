@@ -1,10 +1,17 @@
-<app-sidebar title="Tarefas" class="aside">
-   <ng-container searchInput>
-      <app-search-input placeholder="Buscar tarefas"></app-search-input>
+<app-sidebar-template>
+   <ng-container aside>
+      <app-sidebar title="Projetos" class="aside">
+         <ng-container searchInput>
+            <app-search-input placeholder="Buscar tarefas"></app-search-input>
+         </ng-container>
+         <ng-container content>
+            <div class="task-list flex-column">
+               <app-sidebar-task-card *ngFor="let task of taskList; trackBy: trackByService.track" [task]="task"></app-sidebar-task-card>
+            </div>
+         </ng-container>
+      </app-sidebar>
    </ng-container>
    <ng-container content>
-      <div class="task-list flex-column">
-         <app-sidebar-task-card *ngFor="let task of taskList; trackBy: trackByService.track" [task]="task"></app-sidebar-task-card>
-      </div>
+      <router-outlet></router-outlet>
    </ng-container>
-</app-sidebar>
+</app-sidebar-template>
