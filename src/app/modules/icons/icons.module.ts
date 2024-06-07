@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBell, faChartBar, faFile, faTrashCan, far } from '@fortawesome/free-regular-svg-icons';
-import { faArrowLeft, faArrowRight, faChevronLeft, faEllipsisVertical, faGear, faInfoCircle, faListCheck, faMagnifyingGlass, faPlus, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faArrowRightFromBracket, faChevronLeft, faEllipsisVertical, faGear, faInfoCircle, faListCheck, faMagnifyingGlass, faPlus, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [],
@@ -31,6 +31,7 @@ export class IconsModule {
       faInfoCircle,
       faTriangleExclamation,
       faMagnifyingGlass,
+      faArrowRightFromBracket,
     )
   }
 }

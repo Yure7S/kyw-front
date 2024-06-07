@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from 'src/app/core/service/auth.service';
+import { CurrentUserService } from 'src/app/core/utils/current-user.service';
 
 @Component({
   selector: 'app-icons-sidebar',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./icons-sidebar.component.scss']
 })
 export class IconsSidebarComponent {
-
+  currentUserService = inject(CurrentUserService)
 }

@@ -38,11 +38,10 @@ a {
     color: transparentize($color: $color-base-100, $amount: 0.4);
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 2px 0px;
   }
 
   div {
-    margin-top: 5px;
+    margin-top: 4px;
 
     span {
       font-size: $text-sm;

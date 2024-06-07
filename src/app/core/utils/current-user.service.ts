@@ -36,4 +36,10 @@ export class CurrentUserService {
       false
     );
   }
+
+  public logOut(): void {
+    this.currentUserSig.set(null)
+    this.router.navigateByUrl('auth/login')
+    localStorage.clear()
+  }
 }
