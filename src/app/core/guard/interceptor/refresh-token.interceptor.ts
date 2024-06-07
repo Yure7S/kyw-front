@@ -12,13 +12,17 @@ export const RefreshTokenInterceptor: HttpInterceptorFn = (req, next) => {
   const toastService = inject(ToastrService)
   const authService = inject(AuthService)
 
+  console.log('**************refresh token interceptor******************')
+
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === HttpStatusCode.Forbidden) {
         return authService.refreshToken(currentUserService.currentUserSig()?.refreshToken!).pipe(
-          switchMap(r => next(
-            req.clone({ headers: req.headers.set('Authorization', `Bearer ${r.accessToken}`) })
-          )),
+          switchMap(r => {
+            currentUserService.currentUserSig.mutate(v => v!.refreshToken = r.refreshToken)
+            currentUserService.setLocalCurrentUser()
+            return next(req.clone({ headers: req.headers.set('Authorization', `Bearer ${r.accessToken}`) }))
+          }),
           catchError(error => {
             toastService.warning('Sua sessão expirou!', 'Alerta', { timeOut: 5000 })
             currentUserService.logOut()
