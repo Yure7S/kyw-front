@@ -9,8 +9,9 @@ aside {
   height: 100%;
   padding: 5px;
 
-  a {
+  a, button {
     display: flex;
+    border: 0;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -44,6 +45,15 @@ aside {
 
       &::before {
         opacity: 1;
+      }
+    }
+
+    &.exit-button {
+      font-size: $text-lg;
+      margin-top: 5px;
+
+      &:hover {
+        color: $color-warn;
       }
     }
   }
