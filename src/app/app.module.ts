@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorHandlingInterceptor } from './core/guard/interceptor/error-handling.interceptor';
 import { CurrentUserService } from './core/utils/current-user.service';
+import { RefreshTokenInterceptor } from './core/guard/interceptor/refresh-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CurrentUserService } from './core/utils/current-user.service';
     provideHttpClient(
       withInterceptors([
         authInterceptor,
-        ErrorHandlingInterceptor
+        RefreshTokenInterceptor,
+        ErrorHandlingInterceptor,
       ]),
     ),
     {

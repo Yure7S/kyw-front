@@ -12,6 +12,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     `${apiUrl}/auth/refreshtoken`
   ]
 
+  console.log('**************auth interceptor******************')
+
   return next(!routerWhiteList.includes(req.url)
     ? req.clone({ headers: req.headers.set('Authorization', `Bearer ${currentUserService.currentUserSig()?.token}`) })
     : req);
