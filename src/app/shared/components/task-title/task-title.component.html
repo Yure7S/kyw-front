@@ -1,4 +1,4 @@
-<div class="box-task-title">
+<div class="box-task-title" [class]="task?.criticality">
    <h3>{{task?.title}}</h3>
    <span>{{task?.completedAt | date: 'dd/mm/yyyy'}}</span>
 </div>

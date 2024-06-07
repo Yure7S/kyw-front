@@ -8,9 +8,20 @@
   padding-left: 15px;
   position: relative;
 
+  &.low::before{
+    background-color: $color-primary-900;
+  }
+  
+  &.medium::before{
+    background-color: $color-alert;
+  }
+  
+  &.high::before{
+    background-color: $color-warn;
+  }
+
   &::before {
     content: '';
-    background-color: $color-primary-900;
     position: absolute;
     height: 100%;
     width: 4px;
