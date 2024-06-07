@@ -28,6 +28,7 @@ import { SearchInputComponent } from 'src/app/shared/components/search-input/sea
 import { MessagePanelComponent } from '../../shared/components/message-panel/message-panel.component';
 import { SidebarTemplateComponent } from '../../shared/components/templates/sidebar-template/sidebar-template.component';
 import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.component';
+import { TaskStatusComponent } from '../../shared/components/task-status/task-status.component';
 
 
 
@@ -57,6 +58,7 @@ import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.compone
     MessagePanelComponent,
     SidebarTemplateComponent,
     NavTabComponent,
+    TaskStatusComponent,
   ],
   imports: [
     CommonModule,
@@ -91,6 +93,7 @@ import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.compone
     MessagePanelComponent,
     SidebarTemplateComponent,
     NavTabComponent,
+    TaskStatusComponent,
   ],
   providers: [
     provideNgxMask(),
