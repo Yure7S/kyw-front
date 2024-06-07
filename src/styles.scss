@@ -1,0 +1,91 @@
+@import 'ngx-toastr/toastr'; // regular style toast
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+
+    &-column {
+        @extend .flex;
+        flex-direction: column;
+    }
+}
+
+.align {
+    align-items: center;
+}
+
+/* Toast style */
+@mixin toastColors($base, $contrast, $background) {
+    color: $contrast;
+    border-color: $base;
+    background-color: $background;
+ }
+ 
+ .toast-container.toast-top-right {
+    top: 102px;
+ }
+ 
+ .toast.ngx-toastr {
+    margin: 0 0 10px;
+    padding: 13px 15px 13px 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-left: 7px solid;
+    border-radius: 4px;
+    background-position: 15px center;
+    background-size: 22px;
+    transition: all .15s ease;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.10);
+ 
+    &:hover {
+       box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.10);
+       transform: translateY(-1px);
+       cursor: pointer;
+    }
+ 
+    & * {
+       font-size: 15px;
+    }
+ 
+    &.toast-info {
+       @include toastColors(#387aa1, #1e4257, #f3fbff);
+       background-image: url('assets/images/info-icon.png');
+    }
+ 
+    &.toast-error {
+       @include toastColors(#ae3838, #7d2929, #fff7f7);
+       background-image: url('assets/images/error-icon.png');
+    }
+ 
+    &.toast-success {
+       @include toastColors(#81ac65, #74995b, #fafff3);
+       background-image: url('assets/images/check-icon.png');
+    }
+ 
+    &.toast-warning {
+       @include toastColors(#f5b642, #a1792d, rgb(252, 248, 240));
+       background-image: url('assets/images/alert-icon.png');
+    }
+ }
+ 
+ .toast-progress {
+    background-color: rgba(0, 0, 0, 0.30);
+ }

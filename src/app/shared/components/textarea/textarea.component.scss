@@ -1,0 +1,70 @@
+@import "variables";
+
+.box-textarea {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    position: absolute;
+    font-size: $text-base;
+    color: $color-base-400;
+    left: 13px;
+    font-family: $font-family-secondary;
+    top: 10px;
+    background-color: #f9f9f9;
+    padding: 0px 5px;
+    transition: 200ms ease;
+
+    i {
+      font-size: $text-sm;
+    }
+
+    &:hover {
+      cursor: text;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    padding: 10px 13px;
+    border-radius: 7px;
+    background-color: #f9f9f9;
+    border: 2px solid $color-base-300;
+    font-size: $text-base;
+    font-family: $font-family-tertiary;
+    line-height: 1.4;
+    letter-spacing: 0.02rem;
+    word-spacing: 4px;
+    min-height: 122px;
+    outline: none;
+    color: $color-base-600;
+    height: auto;
+    font-weight: 500;
+
+    &:focus,
+    &:valid {
+      border: 2px solid $color-base-300;
+    }
+
+    &:focus ~ label,
+    &:valid ~ label,
+    &:disabled ~ label {
+      color: $color-primary-900;
+      background: linear-gradient(to bottom, transparent 50%, #f9f9f9 0%);
+      font-size: $text-sm;
+      top: -11px;
+    }
+  }
+
+  .error-span-component {
+    position: absolute;
+    top: calc(100% + 16px);
+  }
+}
+
+@media (max-width: 560px) {
+  .box-textarea textarea {
+    padding: 12px 17px;
+  }
+}

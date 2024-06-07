@@ -1,0 +1,29 @@
+<aside class="flex-column">
+   <nav>
+      <ul class="flex-column align">
+         <li>
+            <a title="Projetos" routerLink="projetos" routerLinkActive="active">
+               <fa-icon [icon]="['far', 'chart-bar']"></fa-icon>
+            </a>
+         </li>
+         <li>
+            <a title="Tarefas" routerLink="tarefas" routerLinkActive="active">
+               <fa-icon icon="list-check"></fa-icon>
+            </a>
+         </li>
+         <li>
+            <a title="Notificações" routerLink="notificacoes" routerLinkActive="active">
+               <fa-icon [icon]="['far', 'bell']"></fa-icon>
+            </a>
+         </li>
+      </ul>
+   </nav>
+   <div class="config">
+      <a title="Configurações" routerLinkActive="active">
+         <fa-icon icon="gear"></fa-icon>
+      </a>
+      <button (click)="currentUserService.logOut()" title="Sair" class="exit-button">
+         <fa-icon icon="arrow-right-from-bracket"></fa-icon>
+      </button>
+   </div>
+</aside>

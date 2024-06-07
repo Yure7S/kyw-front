@@ -1,0 +1,51 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+.box-switch {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+  height: 34px;
+  overflow: hidden;
+  width: 100%;
+  transition: 0.2s ease;
+
+  .highlight-button {
+    content: '';
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    width: 50%;
+    border-radius: 5px;
+    background-color: $color-primary-100;
+    transition: 0.2s ease;
+  }
+
+  &.active::after {
+    right: 0;
+  }
+
+  button {
+    display: block;
+    border: 0;
+    background-color: transparent;
+    height: 100%;
+    z-index: 1;
+    font-size: $text-sm;
+    font-family: $font-family-secondary;
+    width: 50%;
+
+    &.active {
+      font-weight: 600;
+      color: $color-secondary-600;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

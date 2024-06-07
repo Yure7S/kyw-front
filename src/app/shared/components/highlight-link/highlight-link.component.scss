@@ -1,0 +1,18 @@
+@import 'variables';
+
+a {
+  border-radius: 100px;
+  background-color: $color-primary-200;
+  font-family: $font-family-tertiary;
+  color: $color-secondary-900;
+  transition: 0.2s ease;
+  width: max-content;
+  text-wrap: nowrap;
+  font-weight: 500;
+  padding: 1px 7px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary-300;
+  }
+}

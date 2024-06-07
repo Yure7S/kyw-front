@@ -1,0 +1,18 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+.topic {
+  background-color: $color-secondary-700;
+  padding: 11px;
+  gap: 15px;
+
+  h2 {
+    font-family: $font-family-tertiary;
+    color: $color-base-100;
+    font-size: $text-base;
+    font-weight: 500;
+  }
+}

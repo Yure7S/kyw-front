@@ -1,0 +1,5 @@
+<div class="box-switch flex" [class.active]="!value">
+    <div [style.left.%]="value ? 0 : 50" class="highlight-button"></div>
+    <button [class.active]="value" (click)="writeValue(true)">E-mail</button>
+    <button [class.active]="!value" (click)="writeValue(false)">Telefone</button>
+</div>

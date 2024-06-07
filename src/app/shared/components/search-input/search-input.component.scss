@@ -1,0 +1,52 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0px auto;
+
+  &.full-width {
+    max-width: none;
+  }
+
+  input {
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background-color: $color-secondary-900;
+    padding: 11px 13px;
+    color: $color-base-100;
+    font-family: $font-family-tertiary;
+    padding-right: 50px;
+    font-size: $text-sm;
+    transition: 0.1s ease;
+    width: 100%;
+    z-index: 2;
+
+    &:focus {
+      border: 1px solid $color-primary-900;
+    }
+  }
+
+  fa-icon {
+    position: absolute;
+    color: $color-secondary-500;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-48%);
+    font-size: $text-lg;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .search-input {
+    max-width: none;
+  }
+}

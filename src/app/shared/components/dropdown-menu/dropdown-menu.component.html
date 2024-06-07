@@ -1,0 +1,8 @@
+<div appClickOutsideClose (clickOutside)="active = false" class="dropdown-menu flex align">
+   <button aria-label="opções" (click)="toggle()" class="button-dropdown-menu">
+      <fa-icon icon="ellipsis-vertical"/>
+   </button>
+   <div @dropdownMenuAnimation *ngIf="active" class="menu">
+      <ng-content></ng-content>
+   </div>
+</div>

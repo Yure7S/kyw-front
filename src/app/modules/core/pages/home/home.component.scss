@@ -1,0 +1,15 @@
+@import 'variables';
+
+:host {
+  display: block;
+  height: 100%;
+  display: flex;
+}
+
+.icon-sidebar {
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+}

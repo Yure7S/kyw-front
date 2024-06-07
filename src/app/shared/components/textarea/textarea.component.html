@@ -1,0 +1,20 @@
+<div class="box-textarea">
+   <textarea
+     #textareaElement
+     [value]="value"
+     (input)="writeValue(textareaElement.value)"
+     (blur)="onTouched(textareaElement); handleBlur()"
+     id="{{ placeholder }}"
+     [disabled]="isDisabled"
+     required="{{ isRequired }}"
+   >
+   </textarea>
+   <label for="{{ placeholder }}">{{ placeholder }} <i *ngIf="optional">(opcional)</i></label>
+   <app-error-span
+     *ngIf="control.errors && control.touched"
+     class="error-span-component"
+   >
+     {{ errorMessages! | validationError : control.errors! }}
+   </app-error-span>
+ </div>
+ 

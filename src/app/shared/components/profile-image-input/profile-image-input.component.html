@@ -1,0 +1,22 @@
+<label
+  appDropZone
+  [for]="idValue"
+  class="flex align"
+  title="Selecionar arquivo"
+  [class.valid]="!!currentFile"
+  [style.minHeight.px]="minHeight"
+  (fileDropped)="onFileDropped($event)"
+>
+  <div @changeState *ngIf="!currentFile" class="content-label">
+    <input (change)="onFileDropped($event)" #inputFile [id]="idValue" type="file" />
+  </div>
+  <div @changeState *ngIf="currentFile" class="content-label with-file">
+    <!-- <app-close
+      (click)="onRemoveFile()"
+      class="close"
+    ></app-close>
+    <fa-icon icon="file-circle-check"/>
+    <span>Arquivo selecionado:</span>
+    <span>{{ currentFile.name }}</span> -->
+  </div>
+</label>

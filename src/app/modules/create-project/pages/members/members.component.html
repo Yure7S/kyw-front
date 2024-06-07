@@ -1,0 +1,23 @@
+<form action="">
+    <app-paragraph class="paragraph">Adicionar Membro</app-paragraph>
+    <div class="flex align">
+        <app-main-input [formControl]="emailControl" class="email-input" [white]="true" [control]="emailControl"
+            placeholder="E-mail do membro"></app-main-input>
+        <app-add-button (onClick)="addEmail()"></app-add-button>
+    </div>
+</form>
+
+<div class="content">
+    <ul class="email-list">
+        <li class="flex align" *ngFor="let email of memberEmailList; trackBy: trackByService.track; index as i"><span>{{i + 1}}</span>
+            <p>{{email}}</p>
+            <app-dropdown-menu>
+                <app-menu-button (onClick)="removeEmail(email)" [primaryIcon]="['far','trash-can']" [status]="statusEnum.Warn">Deletar</app-menu-button>
+            </app-dropdown-menu>
+        </li>
+    </ul>
+    <div class="box-buttons flex align">
+        <app-step-button routerLink="../detalhes" [back]="true">Voltar</app-step-button>
+        <app-step-button [status]="statusEnum.Info" [normal]="true">Finalizar</app-step-button>
+    </div>
+</div>

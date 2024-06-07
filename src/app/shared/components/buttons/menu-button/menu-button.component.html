@@ -1,0 +1,5 @@
+<button (click)="onClick.emit()" title={{titleValue}} [class]="status" class="flex align">
+   <fa-icon class="primary-icon" *ngIf="primaryIcon" [icon]="primaryIcon"/>
+   <span><ng-content></ng-content></span>
+   <fa-icon class="secondary-icon" *ngIf="secondaryIcon" [icon]="secondaryIcon"/>
+</button>

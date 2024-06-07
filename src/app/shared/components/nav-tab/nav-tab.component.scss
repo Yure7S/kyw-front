@@ -1,0 +1,49 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+ul {
+  background-color: $color-secondary-900;
+
+  li {
+    width: 100%;
+
+    a {
+      gap: 10px;
+      display: flex;
+      width: 100%;
+      transition: 0.2s;
+      padding: 10px 15px;
+      font-size: $text-sm;
+      justify-content: center;
+      letter-spacing: 0.02rem;
+      font-family: $font-family-tertiary;
+      color: $color-base-100;
+      min-width: max-content;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0.97);
+      }
+
+      &::before {
+        content: '';
+        height: 3px;
+        transition: 100ms ease;
+        width: 100%;
+        background-color: $color-primary-900;
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      &.active::before {
+        opacity: 1;
+      }
+    }
+  }
+}

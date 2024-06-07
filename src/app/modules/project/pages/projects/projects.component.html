@@ -1,0 +1,23 @@
+<app-sidebar-template>
+   <ng-container aside>
+      <app-sidebar title="Projetos" class="aside">
+         <ng-container searchInput>
+            <app-search-input placeholder="Buscar projetos"></app-search-input>
+         </ng-container>
+         <ng-container addButton>
+            <app-add-button routerLinkValue="../criar-projeto" titleValue="Criar projeto"
+               [smaller]="true"></app-add-button>
+         </ng-container>
+         <ng-container content>
+            <div class="project-list flex-column">
+               <app-sidebar-project-card
+                  *ngFor="let project of (projectList$ | async)?.content; trackBy: trackByService.track"
+                  [project]="project"></app-sidebar-project-card>
+            </div>
+         </ng-container>
+      </app-sidebar>
+   </ng-container>
+   <ng-container content>
+      <router-outlet></router-outlet>
+   </ng-container>
+</app-sidebar-template>

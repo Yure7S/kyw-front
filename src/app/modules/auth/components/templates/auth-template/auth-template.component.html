@@ -1,0 +1,29 @@
+<section class="flex align">
+    <app-card-container [noPadding]="true" class="card-container">
+        <div class="card-head">
+            <app-arrow-redirect></app-arrow-redirect>
+        </div>
+        <app-separator-row></app-separator-row>
+        <div class="content">
+            <div class="title">
+                <ng-content select="[title]"></ng-content>
+            </div>
+            
+            <div class="description">
+                <ng-content select="[description]"></ng-content>
+            </div>
+
+            <div class="form">
+                <ng-content select="[form]"></ng-content>
+            </div>
+
+            <div class="response">
+                <ng-content select="[response]"></ng-content>
+            </div>
+
+            <div class="box-buttons">
+                <ng-content select="[buttons]"></ng-content>
+            </div>
+        </div>
+    </app-card-container>
+</section>

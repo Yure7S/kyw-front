@@ -1,0 +1,52 @@
+@import 'variables';
+
+@mixin defaultColors($color) {
+  color: $color;
+}
+
+:host {
+  display: block;
+}
+
+button {
+  background-color: $color-base-100;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  padding: 7px 8px;
+  color: $color-secondary-900;
+  transition: 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-base-200;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    width: max-content;
+    text-align: left;
+  }
+
+  .primary-icon {
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  
+  .secondary-icon {
+    margin-left: 13px;
+  }
+}
+
+.success {
+  @include defaultColors($color-success)
+}
+
+.warn {
+  @include defaultColors($color-warn)
+}
+
+.alert {
+  @include defaultColors($color-alert-strong)
+}
