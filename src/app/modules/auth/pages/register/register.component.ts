@@ -40,7 +40,6 @@ export class RegisterComponent {
   })
 
   onSubmit(): void {
-    console.log(this.form)
     if (this.form.valid) {
       const {confirmPassword, ...formValue} = this.form.value
       const registerData = <Register>formValue
