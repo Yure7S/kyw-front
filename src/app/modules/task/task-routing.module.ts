@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { TaskDetailsComponent } from './pages/task-details/task-details.component';
 import { SidebarComponent } from '../core/components/sidebar/sidebar.component';
+import { TaskInfoComponent } from './pages/task-info/task-info.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
         path: ':taskId', component: TaskDetailsComponent,
         children: [
           { path: '', pathMatch: 'full', redirectTo: 'detalhes' },
-          { path: 'detalhes', component: SidebarComponent },
+          { path: 'detalhes', component: TaskInfoComponent },
           { path: 'chat', component: SidebarComponent },
         ]
       }

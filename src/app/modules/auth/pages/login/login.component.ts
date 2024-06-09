@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Status } from 'src/app/core/enums/status.enum';
+import { CurrentUser } from 'src/app/core/model/current-user.interface';
 import { ErrorResponse } from 'src/app/core/model/error-response.interface';
 import { LoginResponse } from 'src/app/core/model/login-response.interface';
 import { Login } from 'src/app/core/model/login.interface';
@@ -36,11 +37,10 @@ export class LoginComponent {
     if (this.form.valid) {
       const loginData = <Login>this.form.value
       this.authService.login(loginData).subscribe({
-        next: (r: LoginResponse) => {
-          localStorage.clear()
-          localStorage.setItem('session', JSON.stringify(r))
+        next: (r: CurrentUser) => {
+          this.currentUserService.currentUserSig.set(r)
+          this.currentUserService.setLocalCurrentUser()
           this.toastService.success('Login realizado com sucesso!', 'Sucesso')
-          this.currentUserService.setCurrentUser()
           this.router.navigateByUrl('')
         },
         error: (error: ErrorResponse) => this.response = error,

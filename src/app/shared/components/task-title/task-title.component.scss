@@ -1,0 +1,46 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+.box-task-title {
+  padding-left: 15px;
+  position: relative;
+
+  &.low::before{
+    background-color: $color-primary-900;
+  }
+  
+  &.medium::before{
+    background-color: $color-alert;
+  }
+  
+  &.high::before{
+    background-color: $color-warn;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+  }
+
+  h3 {
+    margin-bottom: 2px;
+    font-family: $font-family-tertiary;
+    color: $color-base-500;
+    font-size: $text-xl;
+    font-weight: 700;
+  }
+
+  span {
+    font-family: $font-family-tertiary;
+    font-size: $text-base;
+    color: $color-base-500;
+  }
+}

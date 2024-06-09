@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable, take, tap } from 'rxjs';
 import { GetterResponse } from 'src/app/core/model/getter-response.interface';
 import { Project } from 'src/app/core/model/project.interface';
 import { ProjectService } from 'src/app/core/service/project.service';

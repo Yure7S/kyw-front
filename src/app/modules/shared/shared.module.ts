@@ -28,6 +28,15 @@ import { SearchInputComponent } from 'src/app/shared/components/search-input/sea
 import { MessagePanelComponent } from '../../shared/components/message-panel/message-panel.component';
 import { SidebarTemplateComponent } from '../../shared/components/templates/sidebar-template/sidebar-template.component';
 import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.component';
+import { TaskStatusComponent } from '../../shared/components/task-status/task-status.component';
+import { TaskTitleComponent } from '../../shared/components/task-title/task-title.component';
+import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.component';
+import { TaskCriticalityComponent } from '../../shared/components/task-criticality/task-criticality.component';
+import { TaskInfoTemplateComponent } from '../../shared/components/templates/task-info-template/task-info-template.component';
+import { PrimaryButtonComponent } from '../../shared/components/buttons/primary-button/primary-button.component';
+import { ListOfMembersComponent } from '../../shared/components/list-of-members/list-of-members.component';
+import { MemberCardComponent } from '../../shared/components/member-card/member-card.component';
+import { ProfileImageComponent } from '../../shared/components/profile-image/profile-image.component';
 
 
 
@@ -57,6 +66,15 @@ import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.compone
     MessagePanelComponent,
     SidebarTemplateComponent,
     NavTabComponent,
+    TaskStatusComponent,
+    TaskTitleComponent,
+    H3TitleComponent,
+    TaskCriticalityComponent,
+    TaskInfoTemplateComponent,
+    PrimaryButtonComponent,
+    ListOfMembersComponent,
+    MemberCardComponent,
+    ProfileImageComponent,
   ],
   imports: [
     CommonModule,
@@ -91,6 +109,15 @@ import { NavTabComponent } from '../../shared/components/nav-tab/nav-tab.compone
     MessagePanelComponent,
     SidebarTemplateComponent,
     NavTabComponent,
+    TaskStatusComponent,
+    TaskTitleComponent,
+    H3TitleComponent,
+    TaskCriticalityComponent,
+    TaskInfoTemplateComponent,
+    PrimaryButtonComponent,
+    ListOfMembersComponent,
+    MemberCardComponent,
+    ProfileImageComponent,
   ],
   providers: [
     provideNgxMask(),

@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-container.component.scss']
 })
 export class CardContainerComponent {
-  @Input() noPadding: boolean = false
+  @Input() padding?: number
 }

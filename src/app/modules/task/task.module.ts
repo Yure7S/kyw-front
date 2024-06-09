@@ -6,13 +6,15 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { SharedModule } from '../shared/shared.module';
 import { SidebarTaskCardComponent } from './components/sidebar-task-card/sidebar-task-card.component';
 import { TaskDetailsComponent } from './pages/task-details/task-details.component';
+import { TaskInfoComponent } from './pages/task-info/task-info.component';
 
 
 @NgModule({
   declarations: [
     TasksComponent,
     SidebarTaskCardComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    TaskInfoComponent
   ],
   imports: [
     CommonModule,
