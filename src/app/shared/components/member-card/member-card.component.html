@@ -1,9 +1,13 @@
 <a [routerLink]="user.id">
     <button class="flex align" [style.width]="fullWidth ? '100%' : 'initial'">
-       <app-profile-image src="https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360865_1280.png"></app-profile-image>
-       <div class="content flex-column">
-          <h3>{{user.nickname}}</h3>
-          <p>{{user.email}}</p>
-       </div>
+        <app-profile-image
+            src="https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360865_1280.png"></app-profile-image>
+        <div class="content flex-column">
+            <h3>{{user.nickname}}</h3>
+            <p>{{user.email}}</p>
+        </div>
+        <div class="actions">
+            <ng-content select="[actions]"></ng-content>
+        </div>
     </button>
- </a>
+</a>
