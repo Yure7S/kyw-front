@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { TaskStatus } from 'src/app/core/enums/TaskStatus.enum';
 import { Criticality } from 'src/app/core/enums/criticality.enum';
+import { Status } from 'src/app/core/enums/status.enum';
 import { Task } from 'src/app/core/model/task.interface';
+import { User } from 'src/app/core/model/user.interface';
 
 @Component({
   selector: 'app-task-info',
@@ -10,6 +12,8 @@ import { Task } from 'src/app/core/model/task.interface';
   styleUrls: ['./task-info.component.scss']
 })
 export class TaskInfoComponent {
+
+  statusEnum: typeof Status = Status
 
   task: Task = {
     id: '456',
@@ -30,6 +34,30 @@ export class TaskInfoComponent {
     },
     pin: false
   }
+
+  userList: User[] = [
+    {
+      id: '45646',
+      nickname: 'João teste',
+      email: 'aqueleemail@gmail.com',
+      phone: '98988659845',
+      notification: ''
+    },
+    {
+      id: '45646',
+      nickname: 'João teste',
+      email: 'aqueleemail@gmail.com',
+      phone: '98988659845',
+      notification: ''
+    },
+    {
+      id: '45646',
+      nickname: 'João teste',
+      email: 'aqueleemail@gmail.com',
+      phone: '98988659845',
+      notification: ''
+    },
+  ]
 
   $task?: Observable<Task> = of(this.task)
 }

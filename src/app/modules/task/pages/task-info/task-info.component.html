@@ -1,4 +1,4 @@
-<app-task-info-template>
+<app-task-info-template class="task-info-template">
    <ng-container taskInfo>
       <section>
          <app-task-status [status]="task.status"></app-task-status>
@@ -16,8 +16,21 @@
       </section>
    </ng-container>
    <ng-container actions>
-      <div class="container-task-actions">
-         
+      <div class="container-task-actions flex-column">
+         <app-card-container [padding]="15">
+            <div class="action-card-container flex-column">
+               <app-primary-button [status]="statusEnum.Success" [fullWidth]="true">
+                  <fa-icon icon="plus"/>
+                  Adicionar arquivo
+               </app-primary-button>
+               <app-separator-row></app-separator-row>
+               <app-primary-button [status]="statusEnum.Dark" [fullWidth]="true">Marcar como concluído</app-primary-button>
+            </div>
+         </app-card-container>
+
+         <app-h3-title>Membros</app-h3-title>
+         <app-list-of-members [userList]="userList"></app-list-of-members>
+         <app-h3-title>Tags</app-h3-title>
       </div>
    </ng-container>
 </app-task-info-template>
