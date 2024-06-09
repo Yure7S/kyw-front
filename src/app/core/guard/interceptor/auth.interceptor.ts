@@ -9,7 +9,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   const routerWhiteList: string[] = [
     `${apiUrl}/auth/signin`,
-    `${apiUrl}/auth/refreshtoken`
+    `${apiUrl}/auth/refreshtoken`,
+    `${apiUrl}/users/register`
   ]
 
   console.log('**************auth interceptor******************')

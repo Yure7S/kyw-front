@@ -2,6 +2,7 @@ import { GenerateValidationMessagesService as gvms } from "src/app/core/utils/ge
 
 export const validationErrorMessages = {
    default: gvms.default('Campo'),
+   name: gvms.default('Nome'),
    email: gvms.default('E-mail'),
    cpf: {
       ...gvms.default('CPF'),
