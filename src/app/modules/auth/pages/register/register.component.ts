@@ -9,6 +9,7 @@ import { Login } from 'src/app/core/model/login.interface';
 import { Register } from 'src/app/core/model/register.interface';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { CurrentUserService } from 'src/app/core/utils/current-user.service';
+import { LoaderService } from 'src/app/core/utils/loader.service';
 import { validationErrorMessages } from 'src/app/shared/error-message-validators/validation-error-messages';
 import { CustomValidators } from 'src/app/shared/validators/custom-validators';
 
@@ -22,6 +23,7 @@ export class RegisterComponent {
   formBuilder = inject(FormBuilder)
   toastService = inject(ToastrService)
   authService = inject(AuthService)
+  loaderService = inject(LoaderService)
   router = inject(Router)
 
   registerType: FormControl = new FormControl()
@@ -38,7 +40,6 @@ export class RegisterComponent {
   })
 
   onSubmit(): void {
-    console.log(this.form)
     if (this.form.valid) {
       const {confirmPassword, ...formValue} = this.form.value
       const registerData = <Register>formValue

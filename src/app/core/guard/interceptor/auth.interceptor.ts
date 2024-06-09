@@ -3,7 +3,7 @@ import { inject } from '@angular/core';
 import { CurrentUserService } from '../../utils/current-user.service';
 import { environment } from 'src/environments/environment.development';
 import { LoaderService } from '../../utils/loader.service';
-import { finalize } from 'rxjs';
+import { EMPTY, finalize } from 'rxjs';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const currentUserService = inject(CurrentUserService)
@@ -16,6 +16,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     `${apiUrl}/users/register`
   ]
 
+  if(loaderService.isLoading) return EMPTY
   loaderService.show()
 
   return next(!routerWhiteList.includes(req.url)

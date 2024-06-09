@@ -10,6 +10,7 @@ import { LoginResponse } from 'src/app/core/model/login-response.interface';
 import { Login } from 'src/app/core/model/login.interface';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { CurrentUserService } from 'src/app/core/utils/current-user.service';
+import { LoaderService } from 'src/app/core/utils/loader.service';
 import { validationErrorMessages } from 'src/app/shared/error-message-validators/validation-error-messages';
 
 @Component({
@@ -22,6 +23,7 @@ export class LoginComponent {
   currentUserService = inject(CurrentUserService)
   toastService = inject(ToastrService)
   authService = inject(AuthService)
+  loaderService = inject(LoaderService)
   router = inject(Router)
 
   response?: ErrorResponse

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, shareReplay, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class LoaderService {
 
   private loadingSubject: BehaviorSubject<boolean> = new BehaviorSubject(false)
-  public isLoading$: Observable<boolean> = this.loadingSubject.asObservable()
 
   public show() {
     this.loadingSubject.next(true)
@@ -15,5 +14,9 @@ export class LoaderService {
 
   public hide() {
     this.loadingSubject.next(false)
+  }
+
+  public get isLoading(): boolean {
+    return this.loadingSubject.value;
   }
 }
