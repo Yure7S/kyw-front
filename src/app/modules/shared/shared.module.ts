@@ -37,6 +37,7 @@ import { PrimaryButtonComponent } from '../../shared/components/buttons/primary-
 import { ListOfMembersComponent } from '../../shared/components/list-of-members/list-of-members.component';
 import { MemberCardComponent } from '../../shared/components/member-card/member-card.component';
 import { ProfileImageComponent } from '../../shared/components/profile-image/profile-image.component';
+import { LoaderComponent } from '../../shared/components/loader/loader.component';
 
 
 
@@ -75,6 +76,7 @@ import { ProfileImageComponent } from '../../shared/components/profile-image/pro
     ListOfMembersComponent,
     MemberCardComponent,
     ProfileImageComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
