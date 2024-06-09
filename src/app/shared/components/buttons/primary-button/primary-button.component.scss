@@ -1,0 +1,64 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+@mixin defaultProperties ($color) {
+    background-color: $color;
+
+    &:hover {
+        background-color: darken($color: $color, $amount: 5%);
+        cursor: pointer;
+    }
+
+    &:active {
+        filter: brightness(0.8);
+        transform: translateY(1px)
+    }
+}
+
+button {
+    @include defaultProperties($color-primary-900);
+    color: $color-base-100;
+    padding: 6px 11px 7px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: $text-sm;
+    font-family: $font-family-tertiary;
+    font-weight: 500;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    transition: background-color 200ms ease;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    @include defaultProperties($color-base-200);
+    font-family: $font-family-secondary;
+    color: $color-base-600;
+    font-size: $text-sm;
+
+    &:hover {
+        color: $color-base-400;
+    }
+}
+
+.warn {
+    @include defaultProperties($color-warn);
+}
+
+.success {
+    @include defaultProperties($color-success);
+}
+
+.alert {
+    @include defaultProperties($color-alert);
+}
+
+.dark {
+    @include defaultProperties($color-secondary-700);
+}
