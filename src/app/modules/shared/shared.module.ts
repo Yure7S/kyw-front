@@ -33,6 +33,10 @@ import { TaskTitleComponent } from '../../shared/components/task-title/task-titl
 import { H3TitleComponent } from 'src/app/shared/components/h3-title/h3-title.component';
 import { TaskCriticalityComponent } from '../../shared/components/task-criticality/task-criticality.component';
 import { TaskInfoTemplateComponent } from '../../shared/components/templates/task-info-template/task-info-template.component';
+import { PrimaryButtonComponent } from '../../shared/components/buttons/primary-button/primary-button.component';
+import { ListOfMembersComponent } from '../../shared/components/list-of-members/list-of-members.component';
+import { MemberCardComponent } from '../../shared/components/member-card/member-card.component';
+import { ProfileImageComponent } from '../../shared/components/profile-image/profile-image.component';
 
 
 
@@ -67,6 +71,10 @@ import { TaskInfoTemplateComponent } from '../../shared/components/templates/tas
     H3TitleComponent,
     TaskCriticalityComponent,
     TaskInfoTemplateComponent,
+    PrimaryButtonComponent,
+    ListOfMembersComponent,
+    MemberCardComponent,
+    ProfileImageComponent,
   ],
   imports: [
     CommonModule,
@@ -106,6 +114,10 @@ import { TaskInfoTemplateComponent } from '../../shared/components/templates/tas
     H3TitleComponent,
     TaskCriticalityComponent,
     TaskInfoTemplateComponent,
+    PrimaryButtonComponent,
+    ListOfMembersComponent,
+    MemberCardComponent,
+    ProfileImageComponent,
   ],
   providers: [
     provideNgxMask(),
