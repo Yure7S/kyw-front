@@ -1,0 +1,8 @@
+<button
+    title={{titleValue}}
+    (click)="onClick.emit()"
+    [class]="status"
+    [style.width]="!!fullWidth && '100%'"
+    [routerLink]="routerLinkValue">
+    <ng-content></ng-content>
+</button>

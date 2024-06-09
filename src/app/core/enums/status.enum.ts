@@ -4,4 +4,5 @@ export enum Status {
    Success = 'success',
    Info = 'info',
    Light = 'light',
+   Dark = 'dark',
 }

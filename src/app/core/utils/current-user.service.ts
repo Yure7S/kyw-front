@@ -29,6 +29,11 @@ export class CurrentUserService {
     }
   }
 
+  public setLocalCurrentUser(): void {
+    localStorage.clear()
+    localStorage.setItem('session', JSON.stringify(this.currentUserSig()))
+  }
+
   public onlyLoggedInd(toastMessageError?: string): boolean {
     return !!this.currentUserSig() || (
       !!toastMessageError && this.toastService.warning(toastMessageError, "Atenção"),

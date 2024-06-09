@@ -1,0 +1,30 @@
+@import "variables";
+
+@mixin defaultColors($backgroundColor, $textColor) {
+  background-color: $backgroundColor;
+  color: $textColor;
+}
+
+:host {
+  display: block;
+}
+
+span {
+  padding: 3px 8px;
+  font-weight: 600;
+  font-family: $font-family-tertiary;
+  font-size: calc($text-base - 1px);
+  border-radius: 10px;
+}
+
+.closed {
+  @include defaultColors($color-success-light, $color-success);
+}
+
+.open {
+  @include defaultColors($color-success-light, $color-success);
+}
+
+.pending {
+  @include defaultColors($color-alert-light, $color-alert-strong);
+}

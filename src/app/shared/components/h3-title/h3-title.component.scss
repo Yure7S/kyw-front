@@ -1,0 +1,12 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+h3 {
+  color: $color-base-600;
+  font-family: $font-family-tertiary;
+  font-size: $text-base;
+  font-weight: 600;
+}
