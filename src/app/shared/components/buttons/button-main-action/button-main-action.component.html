@@ -1,3 +1,4 @@
 <button (click)="onCLick.emit()" [class.full-width]="fullWidth">
-    <ng-content></ng-content>
+    <app-loader [loaderToButton]="loading" *ngIf="loading"></app-loader>
+    <ng-content *ngIf="!loading"></ng-content>
 </button>

@@ -7,5 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonMainActionComponent {
  @Input() fullWidth: boolean = false
+ @Input() loading: boolean = false
  @Output() onCLick: EventEmitter<any> = new EventEmitter()
 }
