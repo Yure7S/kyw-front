@@ -12,8 +12,6 @@ export const RefreshTokenInterceptor: HttpInterceptorFn = (req, next) => {
   const toastService = inject(ToastrService)
   const authService = inject(AuthService)
 
-  console.log('**************refresh token interceptor******************')
-
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === HttpStatusCode.Forbidden) {
