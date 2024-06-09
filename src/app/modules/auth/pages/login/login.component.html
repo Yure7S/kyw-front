@@ -18,6 +18,6 @@
         </app-message-panel>
     </ng-container>
     <ng-container buttons>
-        <app-button-main-action (onCLick)="onSubmit()" [fullWidth]="true">LOGIN</app-button-main-action>
+        <app-button-main-action [loading]="(loaderService.isLoading$ | async)!" (onCLick)="onSubmit()" [fullWidth]="true">LOGIN</app-button-main-action>
     </ng-container>
 </app-auth-template>
