@@ -33,4 +33,7 @@ export class ProjectService {
       .pipe(shareReplay())
   }
 
+  create(project: FormData): Observable<Project> {
+    return this.http.post<Project>(`${this.api}/projects`, project)
+  }
 }
