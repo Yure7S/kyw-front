@@ -1,10 +1,11 @@
-  <div class="box-input" [class.white]="white">
+<div class="box-input">
   <input
   #element
   [value]="value"
   (input)="writeValue(element.value)"
   (blur)="onTouched(element); handleBlur()"
   [type]="type"
+  [(ngModel)]="value"
   [mask]="maskValue"
   [id]="placeholder | idValue"
   [required]="isRequired"
