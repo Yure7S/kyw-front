@@ -1,6 +1,6 @@
 export interface ProjectInput {
    name: string,
    description: string,
-   imageUrl: string,
+   image?: File,
    members: string[]
 }
