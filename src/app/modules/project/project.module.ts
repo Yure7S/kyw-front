@@ -6,6 +6,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { SharedModule } from '../shared/shared.module';
 import { SidebarProjectCardComponent } from './components/sidebar-project-card/sidebar-project-card.component';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
+import { ProjectChatComponent } from './pages/project-chat/project-chat.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     ProjectsComponent,
     SidebarProjectCardComponent,
     ProjectDetailsComponent,
+    ProjectChatComponent,
   ],
   imports: [
     CommonModule,
