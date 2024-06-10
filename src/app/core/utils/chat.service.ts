@@ -10,7 +10,7 @@ export class ChatService {
   apiUrl = environment.apiUrl
 
   openConnection() {
-    this.websocket = new WebSocket("ws://localhost:8080/connect")
+    this.websocket = new WebSocket("wss://echo.websocket.org")
 
     this.websocket.onopen = (e) => {
       console.log('chat aberto')
@@ -19,8 +19,8 @@ export class ChatService {
 
     this.websocket.onmessage = (e) => {
       console.log(e)
-      const chatMessage = JSON.parse(e.data)
-      this.messages.push(chatMessage)
+      console.log('Enviando mensagem')
+      this.messages.push(e.data)
     }
 
     this.websocket.onclose = (e) => {
@@ -30,7 +30,7 @@ export class ChatService {
   }
 
   sendMessage(message: string) {
-    this.websocket?.send(JSON.stringify(message))
+    this.websocket?.send(message)
   }
 
   closeConnection() {

@@ -12,7 +12,6 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
 
   messageControl: FormControl = new FormControl()
 
-
   ngOnInit(): void {
     this.chatService.openConnection()
   }
