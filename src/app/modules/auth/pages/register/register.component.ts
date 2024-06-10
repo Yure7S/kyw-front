@@ -43,7 +43,8 @@ export class RegisterComponent {
     if (this.form.valid) {
       const formDataRegisterData = new FormData()
       const {confirmPassword, ...formValue} = this.form.value
-      Object.keys(formValue).forEach((value: string) => formDataRegisterData.append(value, (formValue as any)[value])) 
+      const registerData = <Register>formValue
+      Object.keys(formValue).forEach((value: string) => formDataRegisterData.append(value, registerData[value as keyof Register])) 
       this.authService.register(formDataRegisterData).subscribe({
         next: (r: CurrentUser) => {
           this.toastService.success('Cadastro realizado com sucesso!', 'Sucesso')
