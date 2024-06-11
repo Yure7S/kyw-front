@@ -8,5 +8,4 @@ import { ProjectService } from 'src/app/core/service/project.service';
   styleUrls: ['./create-project.component.scss']
 })
 export class CreateProjectComponent {
-  projectService = inject(ProjectService)
 }
