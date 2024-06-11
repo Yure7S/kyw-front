@@ -30,12 +30,13 @@ label {
   .content-label {
     height: 100%;
     width: 100%;
-
+    
     input {
       display: none;
-    }
-
-    &.with-file {
+      }
+      
+      &.with-file {
+      background-color: $color-base-100;
       position: relative;
 
       > * {
