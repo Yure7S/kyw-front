@@ -53,8 +53,9 @@ export class MembersComponent {
   onSubmit(): void {
     if (!!this.memberEmailList.length) {
       const formData = new FormData()
-      this.projectService.projectInputSig.mutate(v => v!.members = this.memberEmailList)
-      const { image, ...projectInput } = this.projectService.projectInputSig()!
+      const projectInputSig = this.projectService.projectInputSig
+      projectInputSig.mutate(v => v!.members = this.memberEmailList)
+      const { image, ...projectInput } = projectInputSig()!
       formData.append('image', image!)
       Object.keys(projectInput).forEach((value: string) => {
         formData.append(value, (projectInput as any)[value])
@@ -63,6 +64,7 @@ export class MembersComponent {
         next: (r: Project) => {
           this.toastService.success('Projeto criado com sucesso!', 'Sucesso')
           this.router.navigateByUrl('')
+          projectInputSig.set(null)
         },
         error: (error: ErrorResponse) => this.response = error,
       })
