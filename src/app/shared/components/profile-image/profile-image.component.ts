@@ -7,12 +7,8 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./profile-image.component.scss']
 })
 export class ProfileImageComponent {
-  @Input() url?: string
   @Input() smaller: boolean = false
+  @Input() url?: string
 
   apiUrl = environment.apiUrl
-
-  getFullImageUrl(relativeUrl: string): string {
-    return `${this.apiUrl}${relativeUrl}`;
-  }
 }

@@ -1,1 +1,2 @@
-<img [class.smaller]="smaller" [src]="url" alt="Imagem do projeto">
+<img *ngIf="url" [class.smaller]="smaller" [src]="url" alt="Imagem do projeto">
+<div *ngIf="!url" [class.smaller]="smaller" class="fall-back"></div>
