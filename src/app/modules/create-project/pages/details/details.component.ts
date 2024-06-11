@@ -29,7 +29,7 @@ export class DetailsComponent implements AfterViewInit {
   profileImage?: File
 
   form = this.formBuilder.group({
-    title: ['', [Validators.required, Validators.maxLength(128)]],
+    name: ['', [Validators.required, Validators.maxLength(128)]],
     description: ['', [Validators.required, Validators.maxLength(258)]],
   })
 
