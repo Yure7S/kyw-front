@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ProjectService } from 'src/app/core/service/project.service';
 
 @Component({
   selector: 'app-create-project',

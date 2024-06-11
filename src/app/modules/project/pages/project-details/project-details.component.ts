@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { GetterResponse } from 'src/app/core/model/getter-response.interface';
 import { Project } from 'src/app/core/model/project.interface';
 import { Sidebar } from 'src/app/core/model/sidebar.interface';
@@ -14,9 +14,17 @@ import { ProjectService } from 'src/app/core/service/project.service';
 export class ProjectDetailsComponent implements OnInit {
   projectService = inject(ProjectService)
   activateRoute = inject(ActivatedRoute)
-  projectId: string = this.activateRoute.snapshot.paramMap.get('projectId') ?? ''
 
   $project?: Observable<Project>
+
+  ngOnInit(): void {
+    this.$project = this.activateRoute.paramMap.pipe(
+      switchMap((params: ParamMap) => {
+        const projectId = params.get('projectId')?.toString() ?? ''
+        return this.projectService.getById(projectId)
+      })
+    )
+  }
 
   sidebarContent: Sidebar[] = [
     {
@@ -36,8 +44,4 @@ export class ProjectDetailsComponent implements OnInit {
       link: 'membros'
     },
   ]
-
-  ngOnInit(): void {
-    this.$project = this.projectService.getById(this.projectId)
-  }
 }

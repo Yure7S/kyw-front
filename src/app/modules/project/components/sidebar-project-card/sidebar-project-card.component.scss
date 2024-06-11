@@ -6,6 +6,7 @@
 
 button {
   padding: 8px;
+  width: 100%;
   color: $color-base-100;
   gap: 14px;
   background-color: transparent;
@@ -20,6 +21,7 @@ button {
   
   .content {
     overflow: hidden;
+    width: 100%;
     display: grid;
     gap: 0 6px;
     justify-content: space-between;

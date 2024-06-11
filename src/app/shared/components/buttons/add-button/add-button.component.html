@@ -1,3 +1,6 @@
-<button [routerLink]="routerLinkValue" title={{titleValue}} class="flex align" [class.smaller]="smaller" (click)="onClick.emit()">
+<button *ngIf="!routerLinkValue" title={{titleValue}} class="flex align" [class.smaller]="smaller" (click)="onClick.emit()">
     <fa-icon icon="plus"></fa-icon>
 </button>
+<a *ngIf="routerLinkValue" [routerLink]="routerLinkValue" title={{titleValue}} class="flex align" [class.smaller]="smaller" (click)="onClick.emit()">
+    <fa-icon icon="plus"></fa-icon>
+</a>

@@ -1,6 +1,6 @@
 <a [routerLink]="project.id">
    <button class="flex align">
-      <app-profile-image src="https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360865_1280.png"></app-profile-image>
+      <app-profile-image [url]="url"></app-profile-image>
       <div class="content flex-column">
          <h3>{{project.name}}</h3>
          <span>{{project.createAt | date: 'dd/mm/yyyy'}}</span>

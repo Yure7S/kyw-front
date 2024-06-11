@@ -1,7 +1,7 @@
 <form action="">
     <app-paragraph class="paragraph">Adicionar Membro</app-paragraph>
     <div class="flex align">
-        <app-main-input [formControl]="emailControl" class="email-input" [white]="true" [control]="emailControl"
+        <app-main-input [errorMessages]="errorMessages.email" [formControl]="emailControl" class="email-input" [white]="true" [control]="emailControl"
             placeholder="E-mail do membro"></app-main-input>
         <app-add-button (onClick)="addEmail()"></app-add-button>
     </div>
@@ -18,6 +18,6 @@
     </ul>
     <div class="box-buttons flex align">
         <app-step-button routerLink="../detalhes" [back]="true">Voltar</app-step-button>
-        <app-step-button [status]="statusEnum.Info" [normal]="true">Finalizar</app-step-button>
+        <app-step-button [status]="statusEnum.Info" (onClick)="onSubmit()" [normal]="true">Finalizar</app-step-button>
     </div>
 </div>

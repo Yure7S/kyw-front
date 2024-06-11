@@ -10,8 +10,8 @@
          </ng-container>
          <ng-container content>
             <div class="project-list flex-column">
-               <app-sidebar-project-card
-                  *ngFor="let project of (projectList$ | async)?.content; trackBy: trackByService.track"
+               <app-sidebar-project-card [url]="'https://picsum.photos/200/300?random=' + i"
+                  *ngFor="let project of (projectList$ | async)?.projects; trackBy: trackByService.track; index as i"
                   [project]="project"></app-sidebar-project-card>
             </div>
          </ng-container>

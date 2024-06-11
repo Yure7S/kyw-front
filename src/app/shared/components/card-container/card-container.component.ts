@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardContainerComponent {
   @Input() padding?: number
+  @Input() maxHeight?: boolean = false
 }
