@@ -16,7 +16,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     `${apiUrl}/users/register`
   ]
 
-  if(loaderService.isLoading) return EMPTY
+   // if(loaderService.isLoading) return EMPTY // TO DO - Verificar se a requisição que está pendente é igual a atual
   loaderService.show()
 
   return next(!routerWhiteList.includes(req.url)
