@@ -15,10 +15,12 @@ export class ProjectsComponent implements OnInit {
 
   trackByService = inject(TrackByService)
   projectService = inject(ProjectService)
+  router = inject(Router)
 
   projectList$?: Observable<any>
 
   ngOnInit(): void {
     this.projectList$ = this.projectService.getAll()
+    this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r.projects[0].id}`))
   }
 }
