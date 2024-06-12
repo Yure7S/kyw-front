@@ -32,7 +32,7 @@ import { RefreshTokenInterceptor } from './core/guard/interceptor/refresh-token.
       withInterceptors([
         authInterceptor,
         RefreshTokenInterceptor,
-        ErrorHandlingInterceptor,
+        ErrorHandlingInterceptor
       ]),
     ),
     {

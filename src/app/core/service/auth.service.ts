@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post(`${this.api}/auth/signin`, loginData)
   }
 
-  register(registerData: Register): Observable<any> {
-    return this.http.post(`${this.api}/auth/register`, registerData)
+  register(registerData: FormData): Observable<any> {
+    return this.http.post(`${this.api}/users/register`, registerData)
   }
 
   refreshToken(refreshToken: string): Observable<RefreshTokenResponse> {

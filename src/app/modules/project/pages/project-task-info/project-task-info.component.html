@@ -1,0 +1,36 @@
+<app-task-info-template class="task-info-template">
+   <ng-container taskInfo>
+      <section>
+         <app-task-status [status]="($task | async)?.status!"></app-task-status>
+         <app-task-title class="task-title" [task]="($task | async)!"></app-task-title>
+
+         <div class="box-criticality flex align">
+            <app-h3-title>Prioridade:</app-h3-title>
+            <app-task-criticality [criticality]="($task | async)?.criticality!"></app-task-criticality>
+         </div>
+
+         <app-h3-title class="h3-title">Descrição</app-h3-title>
+         <app-paragraph>
+            {{($task | async)?.description}}
+         </app-paragraph>
+      </section>
+   </ng-container>
+   <ng-container actions>
+      <div class="container-task-actions flex-column">
+         <app-card-container [padding]="15">
+            <div class="action-card-container flex-column">
+               <app-primary-button [status]="statusEnum.Success" [fullWidth]="true">
+                  <fa-icon icon="plus"/>
+                  Adicionar arquivo
+               </app-primary-button>
+               <app-separator-row></app-separator-row>
+               <app-primary-button [status]="statusEnum.Dark" [fullWidth]="true">Marcar como concluído</app-primary-button>
+            </div>
+         </app-card-container>
+
+         <app-h3-title>Membros</app-h3-title>
+         <app-list-of-members [userList]="userList"></app-list-of-members>
+         <app-h3-title>Tags</app-h3-title>
+      </div>
+   </ng-container>
+</app-task-info-template>

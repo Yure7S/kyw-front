@@ -4,7 +4,8 @@ export interface Project {
    description: string,
    creator: {
       userId: string,
-      nickname: string
+      nickname: string,
+      avatarUrl: string
    },
    imageUrl: string,
    linkGroup: string,

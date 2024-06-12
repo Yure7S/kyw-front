@@ -1,5 +1,5 @@
 <div class="topic flex align">
-   <app-profile-image [smaller]="true" src="https://cdn.pixabay.com/photo/2021/06/24/11/18/background-6360865_1280.png"></app-profile-image>
+   <app-profile-image [smaller]="true" [url]="($project | async)?.imageUrl"></app-profile-image>
    <h2>{{($project | async)?.name}}</h2>
 </div>
 <app-nav-tab [content]="sidebarContent"></app-nav-tab>

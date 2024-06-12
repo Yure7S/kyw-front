@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-profile-image',
@@ -6,6 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./profile-image.component.scss']
 })
 export class ProfileImageComponent {
-  @Input() src?: string
   @Input() smaller: boolean = false
+  @Input() url?: string
+
+  apiUrl = environment.apiUrl
 }

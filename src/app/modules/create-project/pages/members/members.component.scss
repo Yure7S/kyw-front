@@ -49,3 +49,17 @@ form {
     gap: 20px;
   }
 }
+
+@media (width <= 540px) {
+  .content {
+    padding-bottom: 95px;
+
+    .box-buttons {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      padding: 25px;
+    }
+  }
+}

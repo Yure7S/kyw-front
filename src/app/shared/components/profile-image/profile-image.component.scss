@@ -4,7 +4,7 @@
   display: block;
 }
 
-img {
+img, .fall-back {
   background-color: $color-base-100;
   aspect-ratio: 1/1;
   border-radius: 5px;
@@ -12,5 +12,23 @@ img {
 
   &.smaller {
     width: 28px;
+  }
+}
+
+div.fall-back {
+  animation: wait 700ms alternate infinite;
+
+  &.smaller {
+    width: 28px;
+  }
+}
+
+@keyframes wait{
+  from {
+    background-color: transparentize($color: $color-secondary-200, $amount: 0.5);
+  }
+  
+  to {
+    background-color: transparentize($color: $color-secondary-200, $amount: 0.7);
   }
 }

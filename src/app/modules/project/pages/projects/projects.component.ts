@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, take, tap } from 'rxjs';
+import { Observable, map, take, tap } from 'rxjs';
 import { GetterResponse } from 'src/app/core/model/getter-response.interface';
 import { Project } from 'src/app/core/model/project.interface';
 import { ProjectService } from 'src/app/core/service/project.service';
@@ -15,10 +15,12 @@ export class ProjectsComponent implements OnInit {
 
   trackByService = inject(TrackByService)
   projectService = inject(ProjectService)
+  router = inject(Router)
 
-  projectList$?: Observable<GetterResponse<Project[]>>
+  projectList$?: Observable<any>
 
   ngOnInit(): void {
     this.projectList$ = this.projectService.getAll()
+    this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r.projects[0].id}`))
   }
 }

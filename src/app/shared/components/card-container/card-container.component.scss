@@ -10,3 +10,10 @@ div {
   border-radius: 10px;
   border: 1px solid $color-secondary-100;
 }
+
+
+@media (width <= 540px) {
+  .max-height {
+    min-height: 100svh;
+  }
+}

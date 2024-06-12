@@ -1,0 +1,41 @@
+@import 'variables';
+
+:host {
+  display: block;
+  height: calc(100vh - 142px);
+}
+
+.task-info-template {
+  flex: 1;
+  width: 100%;
+}
+
+section {
+  padding: 30px;
+
+  .task-title {
+    margin-top: 20px;
+  }
+
+  > .h3-title {
+    margin-bottom: 5px;
+  }
+
+  .box-criticality {
+    margin: 23px 0;
+    gap: 7px;
+  }
+}
+
+.container-task-actions {
+  background-color: $color-secondary-100;
+  padding: 15px;
+  min-height: 100%;
+  gap: 15px;
+  border-left: 1px solid $color-base-300;
+  width: 100%;
+
+  .action-card-container {
+    gap: 10px;
+  }
+}

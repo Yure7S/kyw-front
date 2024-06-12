@@ -3,21 +3,31 @@
         <app-title-1>Crie sua conta</app-title-1>
     </ng-container>
     <ng-container description>
-        <app-paragraph>Preencha os dados e clique em cadastrar. Já tem conta? <app-highlight-link routerLinkValue="../login">Clique aqui</app-highlight-link> para entrar.</app-paragraph>
+        <app-paragraph>Preencha os dados e clique em cadastrar. Já tem conta? <app-highlight-link
+                routerLinkValue="../login">Clique aqui</app-highlight-link> para entrar.</app-paragraph>
     </ng-container>
     <ng-container form>
         <form [formGroup]="form" class="flex-column">
-            <app-main-input placeholder="Nome" [control]="form.controls.tempControl"></app-main-input>
+            <app-main-input formControlName="nickname" [errorMessages]="errorMessages.name" placeholder="Nome"
+                [control]="form.controls.nickname"></app-main-input>
             <app-register-type-switch [formControl]="registerType"></app-register-type-switch>
-            <app-main-input [placeholder]="registerType.value ? 'Email' : 'Telefone'" [control]="form.controls.tempControl"></app-main-input>
-            <app-main-input type="password" placeholder="Senha" [control]="form.controls.tempControl"></app-main-input>
-            <app-main-input type="password" placeholder="Confirmar Senha" [control]="form.controls.tempControl"></app-main-input>
+            <app-main-input formControlName="email" [errorMessages]="errorMessages.default" placeholder="Email"
+                [control]="form.controls.email"></app-main-input>
+            <app-main-input maskValue="00 00000-0000" formControlName="phone" [errorMessages]="errorMessages.phoneNumber" placeholder="Número"
+                [control]="form.controls.phone"></app-main-input>
+            <app-main-input formControlName="password" [errorMessages]="errorMessages.password" type="password"
+                placeholder="Senha" [control]="form.controls.password"></app-main-input>
+            <app-main-input formControlName="confirmPassword" [errorMessages]="errorMessages.confirmPassword"
+                type="password" placeholder="Confirmar Senha"
+                [control]="form.controls.confirmPassword"></app-main-input>
         </form>
     </ng-container>
     <ng-container response>
-
+        <app-message-panel [status]="statusEnum.Warn" *ngIf="!!response">
+            {{response.message}}
+        </app-message-panel>
     </ng-container>
     <ng-container buttons>
-        <app-button-main-action [fullWidth]="true">CADASTRAR</app-button-main-action>
+        <app-button-main-action [loading]="loaderService.isLoading" (onCLick)="onSubmit()" [fullWidth]="true">CADASTRAR</app-button-main-action>
     </ng-container>
 </app-auth-template>

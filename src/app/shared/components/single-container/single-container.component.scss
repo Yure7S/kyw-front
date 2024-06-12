@@ -7,14 +7,26 @@
 section {
   background-color: $color-base-200;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 65px 0;
 
   .card-container {
     max-width: 700px;
-    width: 100%;
+    width: 90%;
     
     .card-head {
       padding: 10px 13px 7px;
+    }
+  }
+}
+
+@media (width <= 540px) {
+  section {
+    padding: 0;
+
+    .card-container {
+      width: 100%;
+      min-height: 100svh;
     }
   }
 }

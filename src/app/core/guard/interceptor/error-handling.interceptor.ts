@@ -4,9 +4,6 @@ import { ErrorResponse } from '../../model/error-response.interface';
 
 export const ErrorHandlingInterceptor: HttpInterceptorFn = (req, next) => {
 
-
-  console.log('**************error handling interceptor******************')
-
   return next(req).pipe(
     catchError((error: HttpErrorResponse) =>
       throwError(() => !(error.status == (HttpStatusCode.Unauthorized, HttpStatusCode.Forbidden))

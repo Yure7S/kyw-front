@@ -1,0 +1,10 @@
+<app-main-input [control]="messageControl" [formControl]="messageControl"
+    placeholder="Mensagem"></app-main-input>
+<app-primary-button (onClick)="send()" [fullWidth]="true">Enviar</app-primary-button>
+
+<app-h3-title>Menssagens</app-h3-title>
+<ul>
+    <li *ngFor="let message of chatService.messages">
+        {{message}}
+    </li>
+</ul>

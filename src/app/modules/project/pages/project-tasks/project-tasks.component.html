@@ -1,0 +1,23 @@
+<app-sidebar-template class="sidebar-template">
+   <ng-container aside>
+      <div class="aside-container">
+         <div class="aside-header flex align">
+            <app-search-input class="search-input" [fullWidth]="true"></app-search-input>
+            <app-add-button></app-add-button>
+         </div>
+         <div class="content flex-column">
+            <app-task-card *ngFor="let task of (taskList$ | async)?.content" [task]="task">
+               <ng-container actions>
+                  <app-dropdown-menu>
+                     <app-menu-button>Editar</app-menu-button>
+                     <app-menu-button [status]="statusEnum.Warn">Deletar</app-menu-button>
+                  </app-dropdown-menu>
+               </ng-container>
+            </app-task-card>
+         </div>
+      </div>
+   </ng-container>
+   <ng-container content>
+      <router-outlet></router-outlet>
+   </ng-container>
+</app-sidebar-template>

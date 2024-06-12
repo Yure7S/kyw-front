@@ -41,21 +41,42 @@ export class TaskInfoComponent {
       nickname: 'João teste',
       email: 'aqueleemail@gmail.com',
       phone: '98988659845',
-      notification: ''
+      notification: [{
+        id: 'asdf',
+        type: '',
+        content: '',
+        viewed: false,
+        createdAt: ''
+      }],
+      avatarUrl: ''
     },
     {
       id: '45646',
       nickname: 'João teste',
       email: 'aqueleemail@gmail.com',
       phone: '98988659845',
-      notification: ''
+      notification: [{
+        id: '',
+        type: '',
+        content: '',
+        viewed: false,
+        createdAt: ''
+      }],
+      avatarUrl: ''
     },
     {
       id: '45646',
       nickname: 'João teste',
       email: 'aqueleemail@gmail.com',
       phone: '98988659845',
-      notification: ''
+      notification: [{
+        id: '',
+        type: '',
+        content: '',
+        viewed: false,
+        createdAt: ''
+      }],
+      avatarUrl: ''
     },
   ]
 

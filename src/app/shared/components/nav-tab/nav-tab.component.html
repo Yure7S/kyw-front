@@ -1,5 +1,5 @@
 <nav>
-   <ul class="flex">
+   <ul class="flex" [class.light]="light">
       <li *ngFor="let item of content; trackBy: trackByService.itemSideBarTrack()">
          <a routerLinkActive="active" class="flex" [routerLink]="item.link">
             <fa-icon *ngIf="item.icon" [icon]="item.icon"/>

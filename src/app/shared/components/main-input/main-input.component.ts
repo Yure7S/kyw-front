@@ -29,7 +29,7 @@ export class MainInputComponent {
 
   writeValue(value: string): void {
     const valueTrim = value && value.toString().trim()
-    this.onChanged(this.removeSpecialCharacters(value))
+    this.onChanged(this.removeSpecialCharacters(valueTrim))
     this.value = value
   }
 
@@ -50,8 +50,8 @@ export class MainInputComponent {
   }
 
   removeSpecialCharacters(value: string) {
-    return this.maskValue != undefined
-      ? value.replace(/[^a-zA-Z0-9]/g, '')
+    return (this.maskValue != undefined) && value
+      ? value.toString().replace(/[^a-zA-Z0-9]/g, '')
       : value
   }
 }
