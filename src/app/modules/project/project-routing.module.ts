@@ -4,6 +4,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { SidebarComponent } from 'src/app/shared/components/sidebars/sidebar/sidebar.component';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import { ProjectChatComponent } from './pages/project-chat/project-chat.component';
+import { ProjectTasksComponent } from './pages/project-tasks/project-tasks.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'projetos' },
@@ -14,7 +15,7 @@ const routes: Routes = [
         path: ':projectId', component: ProjectDetailsComponent,
         children: [
           { path: '', pathMatch: 'full', redirectTo: 'tarefas' },
-          { path: 'tarefas', component: SidebarComponent },
+          { path: 'tarefas', component: ProjectTasksComponent },
           { path: 'chat', component: ProjectChatComponent },
           { path: 'chat-privado', component: SidebarComponent },
           { path: 'membros', component: SidebarComponent },
