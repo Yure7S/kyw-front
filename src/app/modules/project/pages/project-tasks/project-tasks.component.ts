@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { Status } from 'src/app/core/enums/status.enum';
 import { GetterResponse } from 'src/app/core/model/getter-response.interface';
 import { Task } from 'src/app/core/model/task.interface';
@@ -13,13 +14,15 @@ import { TrackByService } from 'src/app/core/utils/track-by.service';
 })
 export class ProjectTasksComponent implements OnInit {
   taskService = inject(TaskService)
+  activatedRoute = inject(ActivatedRoute)
   trackByService = inject(TrackByService)
-  
+
   statusEnum: typeof Status = Status
   taskList$?: Observable<GetterResponse<Task[]>>
 
   ngOnInit(): void {
-    this.taskList$ = this.taskService.getAll()
-    this.taskList$.subscribe(console.log)
+    this.taskList$ = this.activatedRoute.paramMap.pipe(
+      switchMap(() => this.taskService.getAll())
+    )
   }
 }
