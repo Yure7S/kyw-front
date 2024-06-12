@@ -9,6 +9,8 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 import { ProjectChatComponent } from './pages/project-chat/project-chat.component';
 import { ProjectTasksComponent } from './pages/project-tasks/project-tasks.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
+import { ProjectTaskDetailsComponent } from './pages/project-task-details/project-task-details.component';
+import { ProjectTaskInfoComponent } from './pages/project-task-info/project-task-info.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { TaskCardComponent } from './components/task-card/task-card.component';
     ProjectChatComponent,
     ProjectTasksComponent,
     TaskCardComponent,
+    ProjectTaskDetailsComponent,
+    ProjectTaskInfoComponent,
   ],
   imports: [
     CommonModule,
