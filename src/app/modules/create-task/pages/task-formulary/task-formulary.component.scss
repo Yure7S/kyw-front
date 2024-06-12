@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+form {
+  gap: 22px;
+
+  .double-input {
+    gap: 25px;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+  }
+}
+
+.h3-title {
+  margin: 25px 0 5px;
+}
+
+.box-buttons {
+  justify-content: flex-end;
+  margin-top: 40px;
+}

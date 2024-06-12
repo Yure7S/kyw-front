@@ -1,0 +1,31 @@
+<app-single-container>
+   <app-title-1 class="title">Criar Tarefa</app-title-1>
+   <div class="content">
+      <form class="flex-column" [formGroup]="form">
+         <app-main-input formControlName="name" [control]="form.controls.name" placeholder="Título"></app-main-input>
+         <div class="double-input">
+            <app-main-input formControlName="name" [control]="form.controls.name"
+               placeholder="Data de entrega"></app-main-input>
+            <app-main-input formControlName="name" [control]="form.controls.name"
+               placeholder="Prioridade"></app-main-input>
+         </div>
+         <app-main-input formControlName="name" [control]="form.controls.name" placeholder="Categoria"></app-main-input>
+         <app-textarea formControlName="description" [control]="form.controls.description" placeholder="Descrição"
+            [optional]="true"></app-textarea>
+      </form>
+
+      <app-h3-title class="h3-title">Membros</app-h3-title>
+      <app-primary-button [fullWidth]="true" [status]="statusEnum.Dark">
+         <fa-icon icon="plus"></fa-icon>
+         Adicionar membro
+      </app-primary-button>
+      <app-h3-title class="h3-title">Anexos</app-h3-title>
+      <app-primary-button [fullWidth]="true" [status]="statusEnum.Dark">
+         <fa-icon icon="plus"></fa-icon>
+         Adicionar Anexo
+      </app-primary-button>
+      <div class="box-buttons flex align">
+         <app-primary-button (onClick)="onSubmit()">Criar</app-primary-button>
+      </div>
+   </div>
+</app-single-container>
