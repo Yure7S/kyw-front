@@ -32,7 +32,7 @@ const routes: Routes = [
             ]
           },
           { path: 'chat', component: ProjectChatComponent },
-          { path: 'chat-privado', component: SidebarComponent },
+          { path: 'chat-privado', component: ProjectChatComponent },
           { path: 'membros', component: SidebarComponent },
         ]
       }
