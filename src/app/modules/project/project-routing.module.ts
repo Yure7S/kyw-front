@@ -5,6 +5,9 @@ import { SidebarComponent } from 'src/app/shared/components/sidebars/sidebar/sid
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import { ProjectChatComponent } from './pages/project-chat/project-chat.component';
 import { ProjectTasksComponent } from './pages/project-tasks/project-tasks.component';
+import { TaskDetailsComponent } from '../task/pages/task-details/task-details.component';
+import { ProjectTaskDetailsComponent } from './pages/project-task-details/project-task-details.component';
+import { ProjectTaskInfoComponent } from './pages/project-task-info/project-task-info.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'projetos' },
@@ -15,7 +18,19 @@ const routes: Routes = [
         path: ':projectId', component: ProjectDetailsComponent,
         children: [
           { path: '', pathMatch: 'full', redirectTo: 'tarefas' },
-          { path: 'tarefas', component: ProjectTasksComponent },
+          {
+            path: 'tarefas', component: ProjectTasksComponent,
+            children: [
+              {
+                path: ':taskId', component: ProjectTaskDetailsComponent,
+                children: [
+                  { path: '', pathMatch: 'full', redirectTo: 'detalhes' },
+                  { path: 'detalhes', component: ProjectTaskInfoComponent },
+                  { path: 'chat', component: ProjectChatComponent },
+                ]
+              }
+            ]
+          },
           { path: 'chat', component: ProjectChatComponent },
           { path: 'chat-privado', component: SidebarComponent },
           { path: 'membros', component: SidebarComponent },
