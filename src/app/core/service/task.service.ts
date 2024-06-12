@@ -26,6 +26,5 @@ export class TaskService {
 
   getById(taskId: string): Observable<Task> {
     return this.http.get<Task>(`${this.api}/tasks/${taskId}`)
-
   }
 }
