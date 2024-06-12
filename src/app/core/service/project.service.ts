@@ -18,8 +18,8 @@ export class ProjectService {
   http = inject(HttpClient)
   api = environment.apiUrl
 
-  getAll(pageSize: number = 10, pageNumber: number = 0): Observable<any> {
-    return this.http.get<any>(`${this.api}/users/projects`, {
+  getAll(pageSize: number = 10, pageNumber: number = 0): Observable<Project[]> {
+    return this.http.get<Project[]>(`${this.api}/users/projects`, {
       params: {
         page: pageNumber,
         size: pageSize,
