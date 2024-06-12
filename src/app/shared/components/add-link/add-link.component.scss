@@ -1,0 +1,30 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+a {
+  font-family: $font-family-tertiary;
+  font-size: $text-base;
+  padding: 6px;
+  color: transparentize($color: darken($color: $color-primary-900, $amount: 20%), $amount: 0.3);
+  transition: 200ms ease;
+  font-weight: 500;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: transparentize($color: $color-secondary-100, $amount: 0.4);
+  }
+
+  .icon {
+    aspect-ratio: 1/1;
+    margin-right: 9px;
+    font-size: $text-sm;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: $color-primary-900;
+    color: $color-base-100;
+    width: 22px;
+  }
+}

@@ -38,6 +38,7 @@ import { ListOfMembersComponent } from '../../shared/components/list-of-members/
 import { MemberCardComponent } from '../../shared/components/member-card/member-card.component';
 import { ProfileImageComponent } from '../../shared/components/profile-image/profile-image.component';
 import { LoaderComponent } from '../../shared/components/loader/loader.component';
+import { AddLinkComponent } from '../../shared/components/add-link/add-link.component';
 
 
 
@@ -77,6 +78,7 @@ import { LoaderComponent } from '../../shared/components/loader/loader.component
     MemberCardComponent,
     ProfileImageComponent,
     LoaderComponent,
+    AddLinkComponent,
   ],
   imports: [
     CommonModule,
@@ -120,6 +122,7 @@ import { LoaderComponent } from '../../shared/components/loader/loader.component
     ListOfMembersComponent,
     MemberCardComponent,
     ProfileImageComponent,
+    AddLinkComponent,
   ],
   providers: [
     provideNgxMask(),
