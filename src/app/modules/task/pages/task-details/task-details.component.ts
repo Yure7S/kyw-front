@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { TaskStatus } from 'src/app/core/enums/TaskStatus.enum';
 import { Sidebar } from 'src/app/core/model/sidebar.interface';
 import { Task } from 'src/app/core/model/task.interface';
 
@@ -12,7 +13,7 @@ export class TaskDetailsComponent {
 
   task: Task = {
     id: '456',
-    status: '',
+    status: TaskStatus.Pending,
     criticality: 'HIGH',
     title: 'Nome da tarefa',
     description: 'A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espaços de texto em publicações para testar e ajustar aspectos visuais antes de utilizar conteúdo real. Wikipédia',
