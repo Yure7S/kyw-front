@@ -1,9 +1,12 @@
 <app-sidebar-template class="sidebar-template">
    <ng-container aside>
       <div class="aside-container">
-         <div class="aside-header flex align">
-            <app-search-input class="search-input" [fullWidth]="true"></app-search-input>
-            <app-add-button></app-add-button>
+         <div class="aside-header flex-column">
+            <app-primary-button [fullWidth]="true">
+               <fa-icon icon="plus"></fa-icon>
+               Adicionar tarefa
+               </app-primary-button>
+            <app-search-input [light]="true" placeholder="Buscar tarefas" class="search-input" [fullWidth]="true"></app-search-input>
          </div>
          <div class="content flex-column">
             <app-task-card *ngFor="let task of (taskList$ | async)?.content" [task]="task">
