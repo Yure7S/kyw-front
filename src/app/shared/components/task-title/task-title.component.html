@@ -1,4 +1,4 @@
-<div class="box-task-title" [class]="task?.criticality">
+<div class="box-task-title" [class]="task?.criticality?.toLowerCase()">
    <h3>{{task?.title}}</h3>
-   <span>{{task?.completedAt | date: 'dd/mm/yyyy'}}</span>
+   <span>Conclusão: {{task?.completedAt | date: 'dd/mm/yyyy'}}</span>
 </div>
