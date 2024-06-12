@@ -16,13 +16,13 @@ export class TaskFormularyComponent {
   taskService = inject(TaskService)
   toastService = inject(ToastrService)
   formBuilder = inject(FormBuilder)
-  
+
   errorMessages = validationErrorMessages
   statusEnum: typeof Status = Status 
 
   form = this.formBuilder.group({
     title: ['', [Validators.required, Validators.maxLength(128)]],
-    criticality: [Criticality, [Validators.required]],
+    criticality: ['', [Validators.required]],
     deadline: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.maxLength(256)]],
   })

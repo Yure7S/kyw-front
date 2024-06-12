@@ -2,7 +2,7 @@
    <app-title-1 class="title">Criar Tarefa</app-title-1>
    <div class="content">
       <form class="flex-column" [formGroup]="form">
-         <app-main-input formControlName="title" [control]="form.controls.title" placeholder="Título"></app-main-input>
+         <app-main-input [errorMessages]="errorMessages.title" formControlName="title" [control]="form.controls.title" placeholder="Título"></app-main-input>
          <div class="double-input">
             <app-main-input formControlName="criticality" [control]="form.controls.criticality"
                placeholder="Prioridade"></app-main-input>
