@@ -9,5 +9,6 @@ import { TrackByService } from 'src/app/core/utils/track-by.service';
 })
 export class NavTabComponent {
   @Input() content?: Sidebar[]
+  @Input() light: boolean = false
   trackByService = inject(TrackByService)
 }

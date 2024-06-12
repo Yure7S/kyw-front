@@ -25,10 +25,10 @@ div.fall-back {
 
 @keyframes wait{
   from {
-    background-color: transparentize($color: $color-base-100, $amount: 0.5);
+    background-color: transparentize($color: $color-secondary-200, $amount: 0.5);
   }
   
   to {
-    background-color: transparentize($color: $color-base-100, $amount: 0.7);
+    background-color: transparentize($color: $color-secondary-200, $amount: 0.7);
   }
 }

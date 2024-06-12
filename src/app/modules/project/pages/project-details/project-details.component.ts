@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, shareReplay, switchMap } from 'rxjs';
 import { GetterResponse } from 'src/app/core/model/getter-response.interface';
 import { Project } from 'src/app/core/model/project.interface';
 import { Sidebar } from 'src/app/core/model/sidebar.interface';
@@ -22,7 +22,7 @@ export class ProjectDetailsComponent implements OnInit {
       switchMap((params: ParamMap) => {
         const projectId = params.get('projectId')?.toString() ?? ''
         return this.projectService.getById(projectId)
-      })
+      }), shareReplay()
     )
   }
 

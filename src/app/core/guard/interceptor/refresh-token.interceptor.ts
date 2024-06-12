@@ -22,8 +22,10 @@ export const RefreshTokenInterceptor: HttpInterceptorFn = (req, next) => {
             return next(req.clone({ headers: req.headers.set('Authorization', `Bearer ${r.accessToken}`) }))
           }),
           catchError(error => {
-            toastService.warning('Sua sessão expirou!', 'Alerta', { timeOut: 5000 })
+            if(error.status === HttpStatusCode.Unauthorized) {
+              toastService.warning('Sua sessão expirou!', 'Alerta', { timeOut: 5000 })
             currentUserService.logOut()
+            }
             return of(error)
           })
         )

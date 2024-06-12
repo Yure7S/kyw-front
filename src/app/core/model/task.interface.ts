@@ -1,6 +1,8 @@
+import { TaskStatus } from "../enums/TaskStatus.enum"
+
 export interface Task {
    id: string,
-   status: string,
+   status: TaskStatus,
    criticality: string,
    title: string,
    description: string,
