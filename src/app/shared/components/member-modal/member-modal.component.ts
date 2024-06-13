@@ -7,6 +7,7 @@ import { ModalComponentInterface } from 'src/app/core/model/modal-component.inte
 import { LoaderService } from 'src/app/core/utils/loader.service';
 import { validationErrorMessages } from '../../error-message-validators/validation-error-messages';
 import { Member } from 'src/app/core/model/member.interface';
+import { CheckboxItem } from 'src/app/core/model/checkbox-item.model';
 
 @Component({
   selector: 'app-member-modal',
@@ -48,38 +49,31 @@ export class MemberModalComponent implements ModalComponentInterface, AfterViewI
   @Input() title?: string
   @Input() description?: string
   @Input() active: boolean = true
-  @Input() memberList?: Member[]
+  @Input() memberList: Member[] = []
   @Output() close: EventEmitter<any> = new EventEmitter()
   @Output() submit: EventEmitter<any> = new EventEmitter()
 
-  elementRef = inject(ElementRef)
-  toastService = inject(ToastrService)
-  formBuilder = inject(FormBuilder)
-  loaderService = inject(LoaderService)
-
   statusEnum: typeof Status = Status
-  errorMessages = validationErrorMessages
-  errorResponse?: string
-
-  /* form = this.formBuilder.group({
-    title: ['', [Validators.required]],
-    url: ['', [Validators.required]],
-  }) */
+  checkboxMemberList: CheckboxItem<Member>[] = []
 
   ngAfterViewInit(): void {
-    // this.link && this.form.patchValue(this.link)
+    this.checkboxMemberList = this.memberList.map(item => new CheckboxItem(item))
   }
 
-  setError = (error: string) => this.errorResponse = error
+  toggleMember(value: boolean, index: number) {
+    this.checkboxMemberList![index].selected = value
+  }
 
   onClose(): void {
     this.close.emit()
   }
 
   onSubmit(): void {
-    this.submit.emit(this.memberList)
-
-    /* const newLink: Link = <Link>this.form.value
-    this.submit.emit(newLink) */
+    let selectedMembers: Member[] = []
+    this.checkboxMemberList.filter(item => item.selected).forEach((item) => {
+      const {selected, data} = item
+      selectedMembers.push(data)
+    })
+    this.submit.emit(selectedMembers)
   }
 }
