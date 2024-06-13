@@ -42,6 +42,9 @@ import { AddLinkComponent } from '../../shared/components/add-link/add-link.comp
 import { FileButtonComponent } from '../../shared/components/buttons/file-button/file-button.component';
 import { FileCardComponent } from '../../shared/components/file-card/file-card.component';
 import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
+import { MemberModalComponent } from 'src/app/shared/components/member-modal/member-modal.component';
+import { CloseButtonComponent } from '../../shared/components/buttons/close-button/close-button.component';
+import { MemberCheckboxComponent } from '../../shared/components/member-checkbox/member-checkbox.component';
 
 
 
@@ -84,7 +87,10 @@ import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
     AddLinkComponent,
     FileButtonComponent,
     FileCardComponent,
-    FileSizePipe
+    FileSizePipe,
+    MemberModalComponent,
+    CloseButtonComponent,
+    MemberCheckboxComponent
   ],
   imports: [
     CommonModule,
@@ -131,7 +137,9 @@ import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
     AddLinkComponent,
     FileButtonComponent,
     FileCardComponent,
-    FileSizePipe
+    FileSizePipe,
+    MemberModalComponent,
+    CloseButtonComponent
   ],
   providers: [
     provideNgxMask(),
