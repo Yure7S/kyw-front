@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs';
 import { Criticality } from 'src/app/core/enums/criticality.enum';
 import { Status } from 'src/app/core/enums/status.enum';
 import { Member } from 'src/app/core/model/member.interface';
+import { Task } from 'src/app/core/model/task.interface';
 import { ProjectService } from 'src/app/core/service/project.service';
 import { TaskService } from 'src/app/core/service/task.service';
 import { ModalService } from 'src/app/core/utils/modal.service';
@@ -80,6 +81,6 @@ export class TaskFormularyComponent {
   }
 
   onSubmit() {
-
+    const newTask: Task = <Task>this.form.value
   }
 }
