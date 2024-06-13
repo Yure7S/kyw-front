@@ -15,7 +15,7 @@
       </form>
 
       <app-h3-title class="h3-title">Membros</app-h3-title>
-      <app-primary-button [fullWidth]="true" [status]="statusEnum.Dark">
+      <app-primary-button (onClick)="addMembers()" [fullWidth]="true" [status]="statusEnum.Dark">
          <fa-icon icon="plus"></fa-icon>
          Adicionar Membro
       </app-primary-button>

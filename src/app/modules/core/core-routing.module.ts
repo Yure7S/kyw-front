@@ -13,8 +13,8 @@ const routes: Routes = [
   },
   { path: 'criar-projeto', loadChildren: () => import('../create-project/create-project.module').then(m => m.CreateProjectModule) },
   { path: 'editar-projeto/:projectId', loadChildren: () => import('../create-project/create-project.module').then(m => m.CreateProjectModule) },
-  { path: 'criar-tarefa', loadChildren: () => import('../create-task/create-task.module').then(m => m.CreateTaskModule) },
-  { path: 'editar-tarefa/:taskId', loadChildren: () => import('../create-task/create-task.module').then(m => m.CreateTaskModule) },
+  { path: 'criar-tarefa/:projectId', loadChildren: () => import('../create-task/create-task.module').then(m => m.CreateTaskModule) },
+  { path: 'editar-tarefa/:taskId/:projectId', loadChildren: () => import('../create-task/create-task.module').then(m => m.CreateTaskModule) },
 ];
 
 @NgModule({
