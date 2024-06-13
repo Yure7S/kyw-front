@@ -40,6 +40,8 @@ import { ProfileImageComponent } from '../../shared/components/profile-image/pro
 import { LoaderComponent } from '../../shared/components/loader/loader.component';
 import { AddLinkComponent } from '../../shared/components/add-link/add-link.component';
 import { FileButtonComponent } from '../../shared/components/buttons/file-button/file-button.component';
+import { FileCardComponent } from '../../shared/components/file-card/file-card.component';
+import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
 
 
 
@@ -81,6 +83,8 @@ import { FileButtonComponent } from '../../shared/components/buttons/file-button
     LoaderComponent,
     AddLinkComponent,
     FileButtonComponent,
+    FileCardComponent,
+    FileSizePipe
   ],
   imports: [
     CommonModule,
@@ -126,7 +130,8 @@ import { FileButtonComponent } from '../../shared/components/buttons/file-button
     ProfileImageComponent,
     AddLinkComponent,
     FileButtonComponent,
-    FileButtonComponent,
+    FileCardComponent,
+    FileSizePipe
   ],
   providers: [
     provideNgxMask(),
