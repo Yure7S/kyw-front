@@ -6,7 +6,7 @@ export interface Task {
    criticality: string,
    title: string,
    description: string,
-   attachments: string,
+   attachments: File[],
    createAt: string,
    completedAt: string,
    project: {
