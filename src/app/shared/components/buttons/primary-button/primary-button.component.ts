@@ -11,5 +11,4 @@ export class PrimaryButtonComponent {
   @Input() fullWidth?: boolean = false
   @Input() status?: string
   @Output() onClick: EventEmitter<any> = new EventEmitter()
-
 }

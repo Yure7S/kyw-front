@@ -126,6 +126,7 @@ import { FileButtonComponent } from '../../shared/components/buttons/file-button
     ProfileImageComponent,
     AddLinkComponent,
     FileButtonComponent,
+    FileButtonComponent,
   ],
   providers: [
     provideNgxMask(),
