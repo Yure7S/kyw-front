@@ -1,0 +1,12 @@
+<div (click)="$event.target==$event.currentTarget ? onClose():null" class="container-modal">
+   <div @modalAnimation *ngIf="active" class="modal">
+      <app-close-button class="close-button" (click)="onClose()"></app-close-button>
+      <h3 *ngIf="title">{{ title }}</h3>
+      <app-paragraph *ngIf="description">{{ description }}</app-paragraph>
+      <app-message-panel *ngIf="errorResponse" [status]="statusEnum.Warn">{{errorResponse}}</app-message-panel>
+      <div class="box-button flex">
+         <app-primary-button (click)="onSubmit()" [status]="statusEnum.Success">Salvar</app-primary-button>
+         <app-primary-button (click)="onClose()" [status]="statusEnum.Light">Cancelar</app-primary-button>
+      </div>
+   </div>
+</div>
