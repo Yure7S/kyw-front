@@ -7,6 +7,7 @@ import { Register } from '../model/register.interface';
 import { Project } from '../model/project.interface';
 import { GetterResponse } from '../model/getter-response.interface';
 import { ProjectInput } from '../model/project-input.interface';
+import { Member } from '../model/member.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,11 @@ export class ProjectService {
 
   getById(projectId: string): Observable<Project> {
     return this.http.get<Project>(`${this.api}/projects/${projectId}`)
+      .pipe(shareReplay())
+  }
+  
+  getMembers(projectId: string): Observable<Member[]> {
+    return this.http.get<Member[]>(`${this.api}/projects/${projectId}/members`)
       .pipe(shareReplay())
   }
 
