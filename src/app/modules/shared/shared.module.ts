@@ -45,6 +45,7 @@ import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
 import { MemberModalComponent } from 'src/app/shared/components/member-modal/member-modal.component';
 import { CloseButtonComponent } from '../../shared/components/buttons/close-button/close-button.component';
 import { MemberCheckboxComponent } from '../../shared/components/member-checkbox/member-checkbox.component';
+import { MainSelectComponent } from '../../shared/components/main-select/main-select.component';
 
 
 
@@ -90,7 +91,8 @@ import { MemberCheckboxComponent } from '../../shared/components/member-checkbox
     FileSizePipe,
     MemberModalComponent,
     CloseButtonComponent,
-    MemberCheckboxComponent
+    MemberCheckboxComponent,
+    MainSelectComponent
   ],
   imports: [
     CommonModule,
