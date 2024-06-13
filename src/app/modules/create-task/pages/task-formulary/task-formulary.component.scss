@@ -21,9 +21,13 @@ form {
   margin: 25px 0 5px;
 }
 
+.box-members,
+.box-files {
+  margin-top: 10px;
+}
+
 .box-files {
   gap: 10px;
-  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
 }

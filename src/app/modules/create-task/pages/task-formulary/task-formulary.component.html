@@ -19,14 +19,21 @@
          <fa-icon icon="plus"></fa-icon>
          Adicionar Membro
       </app-primary-button>
-
+      <div *ngIf="!!memberList.length" class="box-members">
+         <app-member-card [fullWidth]="true" *ngFor="let member of memberList" [member]="member">
+            <ng-container actions>
+               <app-dropdown-menu>
+                  <app-menu-button (onClick)="removeMember(member)" [primaryIcon]="['far','trash-can']" [status]="statusEnum.Warn">Remover</app-menu-button>
+               </app-dropdown-menu>
+            </ng-container>
+         </app-member-card>
+      </div>
 
       <app-h3-title class="h3-title">Anexos</app-h3-title>
       <app-file-button (addFile)="addFile($event)" [fullWidth]="true" [status]="statusEnum.Dark">
          <fa-icon icon="plus"></fa-icon>
          Adicionar Anexo
       </app-file-button>
-
       <div class="box-files">
          <app-file-card *ngFor="let file of fileList" [file]="file">
             <ng-container actions>
