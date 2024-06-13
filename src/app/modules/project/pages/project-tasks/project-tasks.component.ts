@@ -22,6 +22,10 @@ export class ProjectTasksComponent implements OnInit {
   projectId: string = this.activatedRoute.parent?.snapshot.paramMap.get('projectId') ?? ''
 
   ngOnInit(): void {
+    this.activatedRoute.parent?.paramMap.subscribe((params: ParamMap) => {
+      this.projectId = params.get('projectId') ?? ''
+    })
+
     this.taskList$ = this.activatedRoute.paramMap.pipe(
       switchMap(() => this.taskService.getAll())
     )
