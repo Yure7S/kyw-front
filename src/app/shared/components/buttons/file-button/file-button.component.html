@@ -8,4 +8,4 @@
   <ng-content></ng-content>
 </app-primary-button>
 
-<input #input (change)="onFileDropped($event)" type="file" />
+<input #input (input)="onFileInput($event)" type="file" />

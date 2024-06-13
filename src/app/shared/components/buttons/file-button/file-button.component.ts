@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-file-button',
@@ -13,10 +13,11 @@ export class FileButtonComponent {
   @Output() addFile: EventEmitter<File> = new EventEmitter()
   @Output() onClick: EventEmitter<any> = new EventEmitter()
 
-  onFileDropped(event: any) {
-    const file: File = event instanceof DragEvent
-      ? event.dataTransfer?.files[0]!
-      : event.target?.files[0]
+  @ViewChild('input', { static: true }) input!: ElementRef
+
+  onFileInput(event: any) {
+    const file: File = event.target?.files[0]
     this.addFile.emit(file)
+    this.input.nativeElement.value = ''
   }
 }
