@@ -17,7 +17,10 @@ export const RefreshTokenInterceptor: HttpInterceptorFn = (req, next) => {
       if (error.status === HttpStatusCode.Forbidden) {
         return authService.refreshToken(currentUserService.currentUserSig()?.refreshToken!).pipe(
           switchMap(r => {
-            currentUserService.currentUserSig.mutate(v => v!.refreshToken = r.refreshToken)
+            currentUserService.currentUserSig.mutate(v => {
+              v!.refreshToken = r.refreshToken
+              v!.token = r.accessToken
+            })
             currentUserService.setLocalCurrentUser()
             return next(req.clone({ headers: req.headers.set('Authorization', `Bearer ${r.accessToken}`) }))
           }),
