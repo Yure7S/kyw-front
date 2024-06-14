@@ -21,6 +21,6 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectList$ = this.projectService.getAll()
-    this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r[0].id}`))
+    // this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r[0].id}`))
   }
 }

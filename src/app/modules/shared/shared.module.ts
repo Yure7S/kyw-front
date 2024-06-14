@@ -47,6 +47,7 @@ import { CloseButtonComponent } from '../../shared/components/buttons/close-butt
 import { MemberCheckboxComponent } from '../../shared/components/member-checkbox/member-checkbox.component';
 import { MainSelectComponent } from '../../shared/components/main-select/main-select.component';
 import { SendButtonComponent } from '../../shared/components/buttons/send-button/send-button.component';
+import { MessageCardComponent } from '../../shared/components/message-card/message-card.component';
 
 
 
@@ -94,7 +95,8 @@ import { SendButtonComponent } from '../../shared/components/buttons/send-button
     CloseButtonComponent,
     MemberCheckboxComponent,
     MainSelectComponent,
-    SendButtonComponent
+    SendButtonComponent,
+    MessageCardComponent
   ],
   imports: [
     CommonModule,
@@ -144,7 +146,8 @@ import { SendButtonComponent } from '../../shared/components/buttons/send-button
     FileSizePipe,
     MemberModalComponent,
     CloseButtonComponent,
-    SendButtonComponent
+    SendButtonComponent,
+    MessageCardComponent
   ],
   providers: [
     provideNgxMask(),
