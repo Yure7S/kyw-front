@@ -1,39 +1,33 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
+import { Message } from '../model/message.model';
+import { Socket } from 'ngx-socket-io';
+import { Observable } from 'rxjs';
+import { MessageInput } from '../model/message-input.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  websocket?: WebSocket;
-  messages: string[] = []
-  apiUrl = environment.apiUrl
+  constructor(private socket: Socket) {}
 
-  openConnection() {
-    this.websocket = new WebSocket("wss://echo.websocket.org")
-
-    this.websocket.onopen = (e) => {
-      console.log('chat aberto')
-      console.log(e)
-    }
-
-    this.websocket.onmessage = (e) => {
-      console.log(e)
-      console.log('Enviando mensagem')
-      this.messages.push(e.data)
-    }
-
-    this.websocket.onclose = (e) => {
-      console.log('chat fechado')
-      console.log(e)
-    }
+  connect() {
+    this.socket.connect();
   }
 
-  sendMessage(message: string) {
-    this.websocket?.send(message)
+  disconnect() {
+    this.socket.disconnect();
   }
 
-  closeConnection() {
-    this.websocket?.close()
+  joinProject(projectId: string) {
+    this.socket.emit('join', { projectId });
+  }
+
+  sendMessage(projectId: string, message: MessageInput) {
+    this.socket.emit(`/chat/project/${projectId}`, { message });
+  }
+
+  receiveMessages(projectId: string): Observable<any> {
+    return this.socket.fromEvent(`/project/${projectId}`);
   }
 }
