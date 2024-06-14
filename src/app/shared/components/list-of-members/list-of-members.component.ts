@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Member } from 'src/app/core/model/member.interface';
 import { User } from 'src/app/core/model/user.interface';
 
 @Component({
@@ -7,5 +8,5 @@ import { User } from 'src/app/core/model/user.interface';
   styleUrls: ['./list-of-members.component.scss']
 })
 export class ListOfMembersComponent {
-  @Input() userList?: User[]
+  @Input() memberList?: Member[]
 }

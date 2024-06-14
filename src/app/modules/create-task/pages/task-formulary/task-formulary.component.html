@@ -1,0 +1,52 @@
+<app-single-container>
+   <app-title-1 class="title">Criar Tarefa</app-title-1>
+   <div class="content">
+      <form class="flex-column" [formGroup]="form">
+         <app-main-input [errorMessages]="errorMessages.title" formControlName="title" [control]="form.controls.title"
+            placeholder="Título"></app-main-input>
+         <div class="double-input">
+            <app-main-input formControlName="criticality" [control]="form.controls.criticality"
+               placeholder="Prioridade"></app-main-input>
+            <app-main-input formControlName="deadline" [control]="form.controls.deadline"
+               placeholder="Data de entrega"></app-main-input>
+         </div>
+         <app-textarea formControlName="description" [control]="form.controls.description" placeholder="Descrição"
+            [optional]="true"></app-textarea>
+      </form>
+
+      <app-h3-title class="h3-title">Membros</app-h3-title>
+      <app-primary-button (onClick)="addMembers()" [fullWidth]="true" [status]="statusEnum.Dark">
+         <fa-icon icon="plus"></fa-icon>
+         Adicionar Membro
+      </app-primary-button>
+      <div *ngIf="!!memberList.length" class="box-members">
+         <app-member-card [fullWidth]="true" *ngFor="let member of memberList" [member]="member">
+            <ng-container actions>
+               <app-dropdown-menu>
+                  <app-menu-button (onClick)="removeMember(member)" [primaryIcon]="['far','trash-can']" [status]="statusEnum.Warn">Remover</app-menu-button>
+               </app-dropdown-menu>
+            </ng-container>
+         </app-member-card>
+      </div>
+
+      <app-h3-title class="h3-title">Anexos</app-h3-title>
+      <app-file-button (addFile)="addFile($event)" [fullWidth]="true" [status]="statusEnum.Dark">
+         <fa-icon icon="plus"></fa-icon>
+         Adicionar Anexo
+      </app-file-button>
+      <div class="box-files">
+         <app-file-card *ngFor="let file of fileList" [file]="file">
+            <ng-container actions>
+               <app-dropdown-menu>
+                  <app-menu-button (onClick)="downloadFile(file)" [primaryIcon]="['far','circle-down']">Download</app-menu-button>
+                  <app-menu-button (onClick)="removeFile(file)" [primaryIcon]="['far','trash-can']" [status]="statusEnum.Warn">Deletar</app-menu-button>
+               </app-dropdown-menu>
+            </ng-container>
+         </app-file-card>
+      </div>
+
+      <div class="box-buttons flex align">
+         <app-primary-button (onClick)="onSubmit()">Criar</app-primary-button>
+      </div>
+   </div>
+</app-single-container>

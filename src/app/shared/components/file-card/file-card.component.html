@@ -1,0 +1,12 @@
+<div class="file-card flex align">
+   <div class="icon flex align">
+      <fa-icon [icon]="['far', 'file']"></fa-icon>
+   </div>
+   <div class="content">
+      <h4 [title]="file?.name">{{file?.name}}</h4>
+      <p [title]="file?.size! | fileSize">{{file?.size! | fileSize}}</p>
+   </div>
+   <div class="actions">
+      <ng-content select="[actions]"></ng-content>
+   </div>
+</div>

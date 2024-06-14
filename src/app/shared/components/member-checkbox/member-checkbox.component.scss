@@ -1,0 +1,43 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+button {
+  border: 0;
+  width: 100%;
+  background-color: transparentize($color: $color-base-200, $amount: 0.75);
+  transition: 200ms ease-out;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: transparentize($color: $color-base-200, $amount: 0.6);
+  }
+
+  label {
+    padding: 8px;
+    color: $color-secondary-900;
+    border: 0;
+    gap: 14px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .content {
+      * {
+        font-family: $font-family-tertiary;
+        font-size: $text-sm;
+        display: block;
+      }
+
+      p {
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: $text-base;
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@
          <ng-container content>
             <div class="project-list flex-column">
                <app-sidebar-project-card [url]="project.imageUrl"
-                  *ngFor="let project of (projectList$ | async)?.projects; trackBy: trackByService.track; index as i"
+                  *ngFor="let project of (projectList$ | async); trackBy: trackByService.track; index as i"
                   [project]="project"></app-sidebar-project-card>
             </div>
          </ng-container>

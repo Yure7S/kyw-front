@@ -39,6 +39,13 @@ import { MemberCardComponent } from '../../shared/components/member-card/member-
 import { ProfileImageComponent } from '../../shared/components/profile-image/profile-image.component';
 import { LoaderComponent } from '../../shared/components/loader/loader.component';
 import { AddLinkComponent } from '../../shared/components/add-link/add-link.component';
+import { FileButtonComponent } from '../../shared/components/buttons/file-button/file-button.component';
+import { FileCardComponent } from '../../shared/components/file-card/file-card.component';
+import { FileSizePipe } from 'src/app/shared/pipes/file-size.pipe';
+import { MemberModalComponent } from 'src/app/shared/components/member-modal/member-modal.component';
+import { CloseButtonComponent } from '../../shared/components/buttons/close-button/close-button.component';
+import { MemberCheckboxComponent } from '../../shared/components/member-checkbox/member-checkbox.component';
+import { MainSelectComponent } from '../../shared/components/main-select/main-select.component';
 
 
 
@@ -79,6 +86,13 @@ import { AddLinkComponent } from '../../shared/components/add-link/add-link.comp
     ProfileImageComponent,
     LoaderComponent,
     AddLinkComponent,
+    FileButtonComponent,
+    FileCardComponent,
+    FileSizePipe,
+    MemberModalComponent,
+    CloseButtonComponent,
+    MemberCheckboxComponent,
+    MainSelectComponent
   ],
   imports: [
     CommonModule,
@@ -123,6 +137,11 @@ import { AddLinkComponent } from '../../shared/components/add-link/add-link.comp
     MemberCardComponent,
     ProfileImageComponent,
     AddLinkComponent,
+    FileButtonComponent,
+    FileCardComponent,
+    FileSizePipe,
+    MemberModalComponent,
+    CloseButtonComponent
   ],
   providers: [
     provideNgxMask(),

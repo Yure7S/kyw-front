@@ -1,0 +1,69 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+.container-modal {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+  .modal {
+    background-color: white;
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 25px 57px rgba(0, 0, 0, 0.4);
+    // padding: 30px 18px 18px;
+    max-width: 400px;
+
+    .close-button {
+      position: absolute;
+      right: 15px;
+      top: 21px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid $color-base-300;
+      padding: 18px 18px 10px;
+      background-color: transparentize($color: $color-secondary-100, $amount: 0.5);
+
+      h3 {
+        width: 88%;
+        font-weight: 600;
+        font-family: $font-family-secondary;
+        color: #565b61;
+        margin-bottom: 5px;
+      }
+    }
+
+    .content {
+      padding: 13px 18px 18px;
+
+      .member-list {
+        gap: 5px;
+        border-top: 1px solid $color-base-300;
+        padding: 5px 0;
+        margin-top: 15px;
+      }
+    }
+
+    .box-button {
+      margin-top: 30px;
+      width: 100%;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+  }
+}

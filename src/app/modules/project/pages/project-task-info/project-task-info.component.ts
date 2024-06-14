@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable, shareReplay, switchMap } from 'rxjs';
 import { Status } from 'src/app/core/enums/status.enum';
+import { Member } from 'src/app/core/model/member.interface';
 import { Task } from 'src/app/core/model/task.interface';
 import { User } from 'src/app/core/model/user.interface';
 import { TaskService } from 'src/app/core/service/task.service';
@@ -18,47 +19,20 @@ export class ProjectTaskInfoComponent implements OnInit {
   $task?: Observable<Task>
   statusEnum: typeof Status = Status
 
-  userList: User[] = [
+  memberList: Member[] = [
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: 'asdf',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: '',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: '',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
   ]

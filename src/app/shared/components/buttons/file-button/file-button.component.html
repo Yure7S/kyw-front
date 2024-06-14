@@ -1,0 +1,11 @@
+<app-primary-button
+  titleValue="{{ titleValue }}"
+  (onClick)="input.click()"
+  [status]="status"
+  [fullWidth]="fullWidth"
+  [routerLinkValue]="routerLinkValue"
+>
+  <ng-content></ng-content>
+</app-primary-button>
+
+<input #input (input)="onFileInput($event)" type="file" />

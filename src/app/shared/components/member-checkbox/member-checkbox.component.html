@@ -1,0 +1,18 @@
+<button>
+  <label class="flex align" [for]="idValue ?? 'member-checkbox'">
+    <input
+      #element
+      class="custom-checkbox"
+      [checked]="checked"
+      [checked]="value"
+      (input)="toggle.emit(element.checked)"
+      [id]="idValue ?? 'member-checkbox'"
+      type="checkbox"
+    />
+    <div class="content flex-column">
+      <p>{{ member?.nickname }}</p>
+    </div>
+  </label>
+</button>
+
+<!-- (input)="writeValue(element.checked)" -->
