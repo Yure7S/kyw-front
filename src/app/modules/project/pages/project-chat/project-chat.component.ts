@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Message } from 'src/app/core/model/message.model';
 import { ChatService } from 'src/app/core/utils/chat.service';
 import { CurrentUserService } from 'src/app/core/utils/current-user.service';
@@ -12,6 +13,9 @@ import { CurrentUserService } from 'src/app/core/utils/current-user.service';
 export class ProjectChatComponent implements OnInit, OnDestroy {
   chatService = inject(ChatService)
   currentUserService = inject(CurrentUserService)
+  activatedRoute = inject(ActivatedRoute)
+
+  projectId: string = ''
   currentUser = this.currentUserService.currentUserSig()
 
   @ViewChild('boxMessages', {static: true}) boxMessages!: ElementRef
@@ -19,13 +23,15 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
   messageControl: FormControl = new FormControl()
 
   ngOnInit(): void {
-    this.chatService.openConnection()
+    const projectId: string = this.activatedRoute.snapshot.paramMap.get('projectId') ?? ''
+    this.chatService.connect()
+    console.log(projectId)
 
     this.boxMessages.nativeElement.scrollTop = this.boxMessages.nativeElement.scrollHeight;
   }
 
   ngOnDestroy(): void {
-    this.chatService.closeConnection()
+    this.chatService.disconnect()
   }
 
   isFirst(index: number): boolean {
@@ -33,7 +39,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
   }
 
   send() {
-    this.chatService.sendMessage(this.messageControl.value)
+    this.chatService.sendMessage(this.projectId, this.messageControl.value)
     this.messageControl.reset()
   }
 
