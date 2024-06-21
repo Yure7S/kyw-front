@@ -43,11 +43,13 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     this.messageControl.reset()
   }
 
+  currentUserId: string = 'd82d261b-1f69-4e74-b995-4e8f6ef39573'
+
   messagesList: Message[] = [
     {
       id: '1',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -61,7 +63,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '3',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -103,7 +105,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '5',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -131,7 +133,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '7',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -159,7 +161,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '9',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -201,7 +203,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '13',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
       },
@@ -215,7 +217,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
     {
       id: '11',
       sender: {
-        userId: '162b6a5e-6515-48a4-ac5c-828d365cb788',
+        userId: this.currentUserId,
         nickname: 'Senha',
         avatarUrl: ''
         },

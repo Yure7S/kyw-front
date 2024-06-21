@@ -20,7 +20,7 @@ const config: SocketIoConfig = {
     transportOptions: {
       polling: {
         extraHeaders: {
-          Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJici5jb20ua3l3Iiwic3ViIjoic2VuaGFAZ21haWwuY29tIiwiaWQiOiJjYWVkNjE1Yy04ZjdhLTRlNzktYTk3My1jOTU2MTE3NzNmNzIiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiZXhwIjoxNzE4NDAyNTIxfQ.4QfC39gnf3ptYsH81ePhMG_YISYIdXmWJmiTivMHP10"
+          Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJici5jb20ua3l3Iiwic3ViIjoic2VuaGFAZ21haWwuY29tIiwiaWQiOiJkODJkMjYxYi0xZjY5LTRlNzQtYjk5NS00ZThmNmVmMzk1NzMiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiZXhwIjoxNzE5MDA5ODYwfQ.MBj69x5TrdedQU-Wcv2zTlg6Jn_14GKKoMnTvyz75XY"
         }
       }
     }
