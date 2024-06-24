@@ -1,7 +1,9 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Message } from 'src/app/core/model/message.model';
+import { MessageService } from 'src/app/core/service/message.service';
+import { ProjectService } from 'src/app/core/service/project.service';
 import { ChatService } from 'src/app/core/utils/chat.service';
 import { CurrentUserService } from 'src/app/core/utils/current-user.service';
 
@@ -10,10 +12,13 @@ import { CurrentUserService } from 'src/app/core/utils/current-user.service';
   templateUrl: './project-chat.component.html',
   styleUrls: ['./project-chat.component.scss']
 })
-export class ProjectChatComponent implements OnInit, OnDestroy {
+export class ProjectChatComponent implements AfterViewInit, OnDestroy {
   chatService = inject(ChatService)
   currentUserService = inject(CurrentUserService)
+  messageService = inject(MessageService)
+  projectService = inject(ProjectService)
   activatedRoute = inject(ActivatedRoute)
+  route = inject(Router)
 
   projectId: string = ''
   currentUser = this.currentUserService.currentUserSig()
@@ -22,12 +27,10 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
 
   messageControl: FormControl = new FormControl()
 
-  ngOnInit(): void {
-    const projectId: string = this.activatedRoute.snapshot.paramMap.get('projectId') ?? ''
+  ngAfterViewInit(): void {
+    const projectId: string = this.activatedRoute.parent?.snapshot.paramMap.get('projectId') ?? ''
     this.chatService.connect()
-    console.log(projectId)
-
-    this.boxMessages.nativeElement.scrollTop = this.boxMessages.nativeElement.scrollHeight;
+    // this.projectService.getMessages(projectId).subscribe(console.log)
   }
 
   ngOnDestroy(): void {
@@ -39,7 +42,7 @@ export class ProjectChatComponent implements OnInit, OnDestroy {
   }
 
   send() {
-    this.chatService.sendMessage(this.projectId, this.messageControl.value)
+    this.chatService.send(this.projectId, this.messageControl.value)
     this.messageControl.reset()
   }
 

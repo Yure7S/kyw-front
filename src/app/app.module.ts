@@ -11,21 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ErrorHandlingInterceptor } from './core/guard/interceptor/error-handling.interceptor';
 import { CurrentUserService } from './core/utils/current-user.service';
 import { RefreshTokenInterceptor } from './core/guard/interceptor/refresh-token.interceptor';
-import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
-const config: SocketIoConfig = {
-  url: 'ws://localhost:8080',
-  options: {
-    path: '/connect',
-    transportOptions: {
-      polling: {
-        extraHeaders: {
-          Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJici5jb20ua3l3Iiwic3ViIjoic2VuaGFAZ21haWwuY29tIiwiaWQiOiJkODJkMjYxYi0xZjY5LTRlNzQtYjk5NS00ZThmNmVmMzk1NzMiLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiZXhwIjoxNzE5MDA5ODYwfQ.MBj69x5TrdedQU-Wcv2zTlg6Jn_14GKKoMnTvyz75XY"
-        }
-      }
-    }
-  }
-};
 
 
 @NgModule({
@@ -37,7 +23,6 @@ const config: SocketIoConfig = {
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    SocketIoModule.forRoot(config),
     ToastrModule.forRoot({
       progressBar: true,
       toastClass: 'toast ngx-toastr',
