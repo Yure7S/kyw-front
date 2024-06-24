@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MessageResponse } from 'src/app/core/model/message-response.model';
 import { Message } from 'src/app/core/model/message.model';
 
 @Component({
@@ -8,6 +9,6 @@ import { Message } from 'src/app/core/model/message.model';
 })
 export class MessageCardComponent {
   @Input() currentUserMessage?: boolean = false
+  @Input() message?: MessageResponse
   @Input() first?: boolean = false
-  @Input() message?: Message
 }

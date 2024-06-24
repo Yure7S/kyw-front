@@ -3,6 +3,6 @@
    <h4 *ngIf="!currentUserMessage">{{message?.sender?.nickname}}</h4>
    <div class="content flex">
       <p>{{message?.content}}</p>
-      <span>{{message?.sendIn | date:"HH:mm"}}</span>
+      <span>{{message?.sentIn | date:"HH:mm"}}</span>
    </div>
 </div>
