@@ -13,7 +13,11 @@ export class MessageService {
   http = inject(HttpClient)
   api = environment.apiUrl
 
-  send(projectId: string, message: MessageInput): Observable<Message> {
-    return this.http.get<Message>(`${this.api}/tasks`)
+  send(projectId: string): Observable<Message> {
+    return this.http.get<Message>(`${this.api}/chat/project/${projectId}`)
+  }
+
+  getAll(projectId: string): Observable<Message[]> {
+    return this.http.get<Message[]>(`${this.api}/messages/${projectId}`)
   }
 }
