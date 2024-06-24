@@ -1,48 +1,40 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, inject } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Message } from '../model/message.model';
 import { Observable } from 'rxjs';
 import { MessageInput } from '../model/message-input.model';
 import { webSocket } from 'rxjs/webSocket';
+import { Client, CompatClient, IPublishParams, Stomp, StompConfig } from '@stomp/stompjs';
+import { CurrentUserService } from './current-user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-
-  private socket?: WebSocket
   private apiUrl = environment.apiUrl
   private connectionUrl = `${this.apiUrl}/connect`
-  
+  private currentUserService = inject(CurrentUserService)
+  private client!: Client
+
   connect() {
-    this.socket = new WebSocket(this.connectionUrl)
-
-    this.socket.onopen = (e) => {
-      console.log('Chat aberto')
-      console.log(e)
-    }
-
-    this.socket.onmessage = (e) => {
-      console.log('Menssagem enviada')
-      console.log(e)
-    }
-
-    this.socket.onerror = (e) => {
-      console.log(e)
-    }
-    
-    this.socket.onclose = (e) => {
-      console.log('Chat feachado')
-      console.log(e)
-    }
+    this.client = new Client({
+      brokerURL: this.connectionUrl,
+      onConnect: (e) => console.log(e.command),
+      onDisconnect: (e) => console.log(e.command)
+    });
+    this.client.activate()
   }
 
   send(projectId: string, message: string) {
-    const newMessage = { projectId, message }
-    this.socket?.send(JSON.stringify(newMessage))
+    const sender = this.currentUserService.currentUserSig()?.id
+    const newMessage = { projectId, sender, message, }
+    this.client.publish({
+      destination: `${this.apiUrl}/project/${projectId}`,
+      body: JSON.stringify(newMessage)
+    })
   }
 
   disconnect() {
-    this.socket?.close()
+    this.client.deactivate()
   }
 }
