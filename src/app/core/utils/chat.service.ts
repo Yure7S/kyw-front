@@ -20,18 +20,23 @@ export class ChatService {
     this.client = new Client({
       brokerURL: this.connectionUrl,
       onConnect: (e) => console.log(e.command),
-      onDisconnect: (e) => console.log(e.command)
+      onDisconnect: (e) => console.log(e.command),
     });
     this.client.activate()
   }
 
-  send(projectId: string, message: string) {
+  send(projectId: string, content: string) {
     const sender = this.currentUserService.currentUserSig()?.id
-    const newMessage = { projectId, sender, message, }
+    const newMessage = { sender, content }
     this.client.publish({
-      destination: `${this.apiUrl}/project/${projectId}`,
+      destination: `/chat/project/${projectId}`,
       body: JSON.stringify(newMessage)
     })
+  }
+
+  subscribe(destination: string, callback: any) {
+    const token = this.currentUserService.currentUserSig()?.token
+    this.client.subscribe(destination, callback, { 'Authorization': `Bearer ${token}` })
   }
 
   disconnect() {
