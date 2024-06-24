@@ -4,6 +4,7 @@ import { Message } from '../model/message.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
+import { ChatService } from '../utils/chat.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,10 @@ import { environment } from 'src/environments/environment.development';
 export class MessageService {
 
   http = inject(HttpClient)
+  chatService = inject(ChatService)
   api = environment.apiUrl
 
-  send(projectId: string): Observable<Message> {
-    return this.http.get<Message>(`${this.api}/chat/project/${projectId}`)
-  }
-
-  getAll(projectId: string): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.api}/messages/${projectId}`)
+  getRecentMessages(projectId: string, onMessageReceived: Function): void {
+    this.chatService.subscribe(`/project/${projectId}`, (message: any) => onMessageReceived(message))
   }
 }
