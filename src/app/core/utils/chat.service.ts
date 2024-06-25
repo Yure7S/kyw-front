@@ -1,7 +1,7 @@
 import { Injectable, OnInit, inject } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Message } from '../model/message.model';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { MessageInput } from '../model/message-input.model';
 import { webSocket } from 'rxjs/webSocket';
 import { Client, CompatClient, IPublishParams, Stomp, StompConfig } from '@stomp/stompjs';
@@ -14,13 +14,20 @@ export class ChatService {
   private apiUrl = environment.apiUrl
   private connectionUrl = `${this.apiUrl}/connect`
   private currentUserService = inject(CurrentUserService)
+  private getConnectionSubject = new Subject<void>()
   private client!: Client
+
+  get afterConnecting() {
+    return this.getConnectionSubject.asObservable()
+  }
 
   connect() {
     this.client = new Client({
       brokerURL: this.connectionUrl,
-      onConnect: (e) => console.log(e.command),
-      onDisconnect: (e) => console.log(e.command),
+      onConnect: () => {
+        this.getConnectionSubject.next()
+        this.getConnectionSubject.complete()
+      },
     });
     this.client.activate()
   }
