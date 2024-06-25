@@ -9,7 +9,8 @@ aside {
   height: 100%;
   padding: 5px;
 
-  a, button {
+  a,
+  button {
     display: flex;
     border: 0;
     position: relative;
@@ -63,6 +64,26 @@ aside {
 
     ul {
       gap: 5px;
+    }
+  }
+}
+
+@media (width <= 540px) {
+  :host {
+    flex-direction: column-reverse;
+    background-color: yellow;
+  }
+
+  aside {
+    padding: 10px;
+
+    nav ul {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .config {
+      display: none;
     }
   }
 }
