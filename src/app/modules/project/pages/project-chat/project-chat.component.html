@@ -1,10 +1,11 @@
-<app-main-input [control]="messageControl" [formControl]="messageControl"
-    placeholder="Mensagem"></app-main-input>
-<app-primary-button (onClick)="send()" [fullWidth]="true">Enviar</app-primary-button>
-
-<app-h3-title>Menssagens</app-h3-title>
-<ul>
-    <li *ngFor="let message of chatService.messages">
-        {{message}}
-    </li>
-</ul>
+<section class="flex-column">
+   <div #boxMessages class="box-messages flex-column">
+      <app-message-card [first]="isFirst(i)" [currentUserMessage]="message.sender.userId == currentUser?.id"
+         *ngFor="let message of (messagesList$ | async)?.reverse(); index as i; reverse" [message]="message"></app-message-card>
+   </div>
+   <div class="box-input-message flex align">
+      <app-main-input class="message-input" [control]="messageControl" [formControl]="messageControl"
+         placeholder="Mensagem"></app-main-input>
+      <app-send-button (onClick)="send()"></app-send-button>
+   </div>
+</section>
