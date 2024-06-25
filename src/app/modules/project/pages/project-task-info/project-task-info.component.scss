@@ -39,3 +39,9 @@ section {
     gap: 10px;
   }
 }
+
+@media (width <= 540px) {
+  :host {
+    height: calc(100vh - 199px);
+  }
+}
