@@ -1,7 +1,7 @@
 <section class="flex-column">
    <div #boxMessages class="box-messages flex-column">
       <app-message-card [first]="isFirst(i)" [currentUserMessage]="message.sender.userId == currentUser?.id"
-         *ngFor="let message of (messagesList$ | async); index as i" [message]="message"></app-message-card>
+         *ngFor="let message of (messagesList$ | async)?.reverse(); index as i; reverse" [message]="message"></app-message-card>
    </div>
    <div class="box-input-message flex align">
       <app-main-input class="message-input" [control]="messageControl" [formControl]="messageControl"

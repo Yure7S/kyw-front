@@ -11,6 +11,7 @@ section {
   .box-messages {
     overflow-y: scroll;
     padding: 15px 5%;
+    flex-direction: column-reverse;
     gap: 7px;
     flex: 1;
 
