@@ -33,13 +33,13 @@ export class ProjectChatComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.messagesList$ = this.projectService.getMessages(this.projectId)
     this.chatService.connect()
-    this.messageService.getRecentMessages(this.projectId, () => this.getMessages())
-    setTimeout(() => {
-    }, 500);
+    this.chatService.afterConnecting.subscribe(() => {
+      this.messageService.getRecentMessages(this.projectId, () => this.getMessages())
+    })
   }
 
   private getMessages(): void {
-    this.messagesList$ = this.projectService.getMessages(this.projectId)
+    this.projectService.getMessages(this.projectId).subscribe(r => this.messagesList$ = of(r))
   }
 
   ngOnDestroy(): void {
