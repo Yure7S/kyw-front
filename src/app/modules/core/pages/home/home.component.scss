@@ -1,7 +1,6 @@
-@import 'variables';
+@import "variables";
 
 :host {
-  display: block;
   height: 100%;
   display: flex;
 }
@@ -12,4 +11,18 @@
 
 .content {
   width: 100%;
+}
+
+@media (width <= 540px) {
+  :host {
+    flex-direction: column-reverse;
+
+    .icon-sidebar {
+      height: initial;
+    }
+
+    .content {
+      height: 100%;
+    }
+  }
 }
