@@ -48,6 +48,7 @@ import { MemberCheckboxComponent } from '../../shared/components/member-checkbox
 import { MainSelectComponent } from '../../shared/components/main-select/main-select.component';
 import { SendButtonComponent } from '../../shared/components/buttons/send-button/send-button.component';
 import { MessageCardComponent } from '../../shared/components/message-card/message-card.component';
+import { HideItemByRouteDirective } from '../../shared/directives/hide-item-by-route.directive';
 
 
 
@@ -96,7 +97,8 @@ import { MessageCardComponent } from '../../shared/components/message-card/messa
     MemberCheckboxComponent,
     MainSelectComponent,
     SendButtonComponent,
-    MessageCardComponent
+    MessageCardComponent,
+    HideItemByRouteDirective
   ],
   imports: [
     CommonModule,
@@ -147,7 +149,8 @@ import { MessageCardComponent } from '../../shared/components/message-card/messa
     MemberModalComponent,
     CloseButtonComponent,
     SendButtonComponent,
-    MessageCardComponent
+    MessageCardComponent,
+    HideItemByRouteDirective,
   ],
   providers: [
     provideNgxMask(),
