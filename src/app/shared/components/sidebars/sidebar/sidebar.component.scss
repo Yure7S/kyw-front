@@ -5,9 +5,9 @@
 }
 
 aside {
-  height: 100%;
   border-right: 1px solid $color-secondary-900;
   background-color: $color-secondary-700;
+  height: 100%;
   width: 280px;
 
   .aside-header {
@@ -47,5 +47,14 @@ aside {
   
   .sidebar-body {
     padding: 5px 16px;
+  }
+}
+
+@media (width <= 540px) {
+  aside {
+    width: 100vw;
+
+    .sidebar-body {
+    }
   }
 }
