@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+form {
+  gap: 22px;
+
+  .double-input {
+    gap: 25px;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+  }
+}
+
+.h3-title {
+  margin: 25px 0 5px;
+}
+
+.box-members,
+.box-files {
+  margin-top: 10px;
+}
+
+.box-files {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+}
+
+.box-buttons {
+  justify-content: flex-end;
+  margin-top: 40px;
+}

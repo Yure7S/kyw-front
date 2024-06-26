@@ -1,39 +1,52 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, inject } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
+import { Message } from '../model/message.model';
+import { Observable, Subject } from 'rxjs';
+import { MessageInput } from '../model/message-input.model';
+import { webSocket } from 'rxjs/webSocket';
+import { Client, CompatClient, IPublishParams, Stomp, StompConfig } from '@stomp/stompjs';
+import { CurrentUserService } from './current-user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  websocket?: WebSocket;
-  messages: string[] = []
-  apiUrl = environment.apiUrl
+  private apiUrl = environment.apiUrl
+  private connectionUrl = `${this.apiUrl}/connect`
+  private currentUserService = inject(CurrentUserService)
+  private getConnectionSubject = new Subject<void>()
+  private client!: Client
 
-  openConnection() {
-    this.websocket = new WebSocket("wss://echo.websocket.org")
-
-    this.websocket.onopen = (e) => {
-      console.log('chat aberto')
-      console.log(e)
-    }
-
-    this.websocket.onmessage = (e) => {
-      console.log(e)
-      console.log('Enviando mensagem')
-      this.messages.push(e.data)
-    }
-
-    this.websocket.onclose = (e) => {
-      console.log('chat fechado')
-      console.log(e)
-    }
+  get afterConnecting() {
+    return this.getConnectionSubject.asObservable()
   }
 
-  sendMessage(message: string) {
-    this.websocket?.send(message)
+  connect() {
+    this.client = new Client({
+      brokerURL: this.connectionUrl,
+      onConnect: () => {
+        this.getConnectionSubject.next()
+        this.getConnectionSubject.complete()
+      },
+    });
+    this.client.activate()
   }
 
-  closeConnection() {
-    this.websocket?.close()
+  send(projectId: string, content: string) {
+    const sender = this.currentUserService.currentUserSig()?.id
+    const newMessage = { sender, content }
+    this.client.publish({
+      destination: `/chat/project/${projectId}`,
+      body: JSON.stringify(newMessage)
+    })
+  }
+
+  subscribe(destination: string, callback: any) {
+    const token = this.currentUserService.currentUserSig()?.token
+    this.client.subscribe(destination, callback, { 'Authorization': `Bearer ${token}` })
+  }
+
+  disconnect() {
+    this.client.deactivate()
   }
 }

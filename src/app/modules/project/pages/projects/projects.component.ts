@@ -17,10 +17,10 @@ export class ProjectsComponent implements OnInit {
   projectService = inject(ProjectService)
   router = inject(Router)
 
-  projectList$?: Observable<any>
+  projectList$?: Observable<Project[]>
 
   ngOnInit(): void {
     this.projectList$ = this.projectService.getAll()
-    this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r.projects[0].id}`))
+    // this.projectList$.subscribe(r => this.router.navigateByUrl(`projetos/${r[0].id}`))
   }
 }

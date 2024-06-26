@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { TaskStatus } from 'src/app/core/enums/TaskStatus.enum';
 import { Criticality } from 'src/app/core/enums/criticality.enum';
 import { Status } from 'src/app/core/enums/status.enum';
+import { Member } from 'src/app/core/model/member.interface';
 import { Task } from 'src/app/core/model/task.interface';
 import { User } from 'src/app/core/model/user.interface';
 
@@ -21,7 +22,7 @@ export class TaskInfoComponent {
     criticality: Criticality.High,
     title: 'Nome da tarefa',
     description: 'A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espaços de texto em publicações para testar e ajustar aspectos visuais antes de utilizar conteúdo real. Wikipédia',
-    attachments: '',
+    attachments: [],
     createAt: '2024-08-07T12:10:10.374Z',
     completedAt: '2024-09-07T12:10:10.374Z',
     project: {
@@ -35,47 +36,20 @@ export class TaskInfoComponent {
     pin: false
   }
 
-  userList: User[] = [
+  memberList: Member[] = [
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: 'asdf',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: '',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
     {
-      id: '45646',
-      nickname: 'João teste',
-      email: 'aqueleemail@gmail.com',
-      phone: '98988659845',
-      notification: [{
-        id: '',
-        type: '',
-        content: '',
-        viewed: false,
-        createdAt: ''
-      }],
+      userId: '654',
+      nickname: 'Member Name',
       avatarUrl: ''
     },
   ]

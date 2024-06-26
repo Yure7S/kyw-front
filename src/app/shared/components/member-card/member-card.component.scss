@@ -15,7 +15,7 @@ button {
 
   &:hover {
     cursor: pointer;
-    background-color: $color-base-200;
+    background-color: transparentize($color: $color-base-200, $amount: 0.7);
   }
   
   .content {

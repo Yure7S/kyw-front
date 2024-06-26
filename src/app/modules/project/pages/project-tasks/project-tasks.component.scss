@@ -11,11 +11,11 @@
     height: 100%;
     padding: 10px;
     width: 100vw;
-    max-width: 290px;
+    max-width: 260px;
     border-right: 1px solid $color-base-200;
 
     .aside-header {
-      gap: 15px;
+      gap: 8px;
       justify-content: space-between;
 
       .search-input {
@@ -26,6 +26,6 @@
 
   .content {
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 8px;
   }
 }

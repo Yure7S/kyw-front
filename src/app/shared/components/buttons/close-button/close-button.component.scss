@@ -1,0 +1,27 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+button {
+  background-color: $color-secondary-400;
+  color: white;
+  border: 0;
+  aspect-ratio: 1/1;
+  font-size: 15px;
+  width: 21px;
+  transition: background-color 300ms ease;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid transparent;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $color-base-400;
+    background-color: $color-base-100;
+    color: $color-base-400;
+  }
+}

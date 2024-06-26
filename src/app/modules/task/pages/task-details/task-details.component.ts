@@ -17,7 +17,7 @@ export class TaskDetailsComponent {
     criticality: 'HIGH',
     title: 'Nome da tarefa',
     description: 'A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espaços de texto em publicações para testar e ajustar aspectos visuais antes de utilizar conteúdo real. Wikipédia',
-    attachments: '',
+    attachments: [],
     createAt: '2024-08-07T12:10:10.374Z',
     completedAt: '2024-09-07T12:10:10.374Z',
     project: {

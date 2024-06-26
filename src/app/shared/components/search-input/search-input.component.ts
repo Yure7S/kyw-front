@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class SearchInputComponent {
   @Input() placeholder?: string
   @Input() fullWidth: boolean = false
+  @Input() light: boolean = false
   @Input() type?: string
 }

@@ -16,15 +16,20 @@
     max-width: none;
     width: 100%;
   }
+  
+  &.light input {
+    background-color: $color-secondary-100;
+    color: $color-secondary-900;
+  }
 
   input {
     border: 1px solid transparent;
     border-radius: 7px;
     background-color: $color-secondary-900;
-    padding: 11px 13px;
+    padding: 9px 12px;
     color: $color-base-100;
     font-family: $font-family-tertiary;
-    padding-right: 50px;
+    padding-right: 40px;
     font-size: $text-sm;
     transition: 0.1s ease;
     width: 100%;
@@ -38,7 +43,7 @@
   fa-icon {
     position: absolute;
     color: $color-secondary-500;
-    right: 16px;
+    right: 13px;
     top: 50%;
     transform: translateY(-48%);
     font-size: $text-lg;
