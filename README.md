@@ -1,27 +1,18 @@
-# KywFront
+# KYW - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+O **KYW** é um sistema de gerenciamento e organização de tarefas em grupo, projetado para facilitar a colaboração, o acompanhamento de fluxos de trabalho e a produtividade de equipes. O projeto nasceu no ambiente acadêmico com o objetivo de simular e resolver as dores reais de gestão de projetos.
 
-## Development server
+## 🛠️ Tecnologias Utilizadas
+* **Framework:** Angular v16.2.0
+* **Estilização:** SCSS / SASS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Como Rodar o Projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este projeto foi gerado utilizando o **Angular CLI**. Siga os passos abaixo para executar a aplicação localmente:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1. Pré-requisitos
+Certifique-se de ter o `Node.js` e o `npm` instalados em sua máquina. Depois, instale o Angular CLI globalmente (caso ainda não tenha):
+```bash
+npm install -g @angular/cli@16.2.0
